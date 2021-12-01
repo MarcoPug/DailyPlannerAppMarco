@@ -31,6 +31,7 @@ namespace DailyPlannerAppMarco.UserControls
             addColor();
 
             //setTasks();
+
             
 
         }
@@ -44,7 +45,49 @@ namespace DailyPlannerAppMarco.UserControls
             cGroup.SelectedIndex = -1;
             //cGroup.SelectionLength = 0;
             //cGroup.Text = "Filter";
+            SetNotifications();
+        }
 
+        private void SetNotifications()
+        {
+            for (int i = 0; i < itemsList.toDoItems.Count; i++)//check if deadline passed
+            {
+                DateTime current = DateTime.Now;
+                System.TimeSpan diff = DateTime.Now.Subtract(itemsList.toDoItems[i].dueDate);
+                System.TimeSpan diff2 = current.Subtract(itemsList.toDoItems[i].dueDate);
+
+                //TimeSpan span = itemsList.toDoItems[i].dueDate - DateTime.Now;
+                //MessageBox.Show(span.ToString());
+                //MessageBox.Show(diff.ToString() + "");
+
+
+                //MessageBox.Show("" + itemsList.toDoItems[i].getDueDate());
+                //MessageBox.Show("diff: " + diff);
+                string noti = "";
+                //is.important
+                if (itemsList.toDoItems[i].hasDueDate && itemsList.toDoItems[i].isChecked == false && diff.Hours >= 0)
+                {//if item is important and has a due date and item is Not checked and missed by 0 or more hours (more than 60 minutes since fail to complete)
+                    if ((diff.Hours < 6 && diff.Hours >= 1) || (diff2.Hours < 6 && diff2.Hours >= 1))//missed within 1-6 hours
+                        noti = "You Missed: " + itemsList.toDoItems[i].title + " By " + diff.Hours + " Hours";
+                    else if ((diff.Hours <= 0) || (diff2.Hours <= 0))// missed within the hour
+                        noti = "You Should do: " + itemsList.toDoItems[i].title;
+                    else if ((diff.Hours >= 6) || (diff2.Hours >= 6))//missed over 6 hours ago
+                        noti = "You Forgot to do: " + itemsList.toDoItems[i].title + " Today!";
+                    //itemsList.toDoItems[i].canShowMessage = false;
+
+                    //MessageBox.Show(DateTime.Now + "\n" + "MINUS" + "\n" + itemsList.toDoItems[i].dueDate + "\n" + "EQUALS:" + "\n" + diff.Hours);
+
+                    lbNotifications.Items.Add(noti);
+
+                    //MessageBox.Show("(diff.Hours >= 0) : " + diff.Hours);
+                }
+                //MessageBox.Show(DateTime.Now.ToString() + "<< current . list >> " + itemsList.toDoItems[i].dueDate);
+                
+            }
+            if (lbNotifications.Items.Count == 0)
+            {
+                lbNotifications.Visible = false;
+            }
         }
 
 
@@ -286,6 +329,7 @@ namespace DailyPlannerAppMarco.UserControls
 
             AddItemTodolist formadd = new AddItemTodolist();
             formadd.ShowDialog();
+
             bs.ResetBindings(false);
             setChecked();
 

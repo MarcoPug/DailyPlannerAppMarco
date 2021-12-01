@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DailyPlannerAppMarco.exe" size="735712">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DailyPlannerAppMarco.exe" size="738272">
       <assemblyIdentity name="DailyPlannerAppMarco" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LrTDaTr05qlAWSw9EdpgJ7a0fnNld7FnCkG+qO8dN7g=</dsig:DigestValue>
+        <dsig:DigestValue>x/tMdC5C/rBcHfEMEuS9l+cLPly/K0uaukn1G2X3Jhc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -72,7 +72,7 @@ namespace DailyPlannerAppMarco
         {
 
             
-            if (isUniqueAccount(db) && txtEmail.Text != "" && txtPassword.Text != "")
+            if (isUniqueAccount(db) && txtEmail.Text != "" && txtPassword.Text != "" && txtEmail.Text.Contains("@"))
             {
                 User user = new User
                 {

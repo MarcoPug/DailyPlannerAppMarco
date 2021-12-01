@@ -42,6 +42,7 @@ namespace DailyPlannerAppMarco.UserControls
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.cGroup = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnCancelFilter = new Guna.UI2.WinForms.Guna2Button();
+            this.lbNotifications = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // listBox
@@ -293,10 +294,21 @@ namespace DailyPlannerAppMarco.UserControls
             this.btnCancelFilter.TabIndex = 27;
             this.btnCancelFilter.Click += new System.EventHandler(this.btnCancelFilter_Click);
             // 
+            // lbNotifications
+            // 
+            this.lbNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lbNotifications.FormattingEnabled = true;
+            this.lbNotifications.ItemHeight = 25;
+            this.lbNotifications.Location = new System.Drawing.Point(20, 24);
+            this.lbNotifications.Name = "lbNotifications";
+            this.lbNotifications.Size = new System.Drawing.Size(258, 104);
+            this.lbNotifications.TabIndex = 28;
+            // 
             // UC_ToDoList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbNotifications);
             this.Controls.Add(this.btnCancelFilter);
             this.Controls.Add(this.cGroup);
             this.Controls.Add(this.btnDelete);
@@ -329,5 +341,6 @@ namespace DailyPlannerAppMarco.UserControls
         private System.Windows.Forms.ToolTip toolTip1;
         private Guna.UI2.WinForms.Guna2ComboBox cGroup;
         private Guna.UI2.WinForms.Guna2Button btnCancelFilter;
+        private System.Windows.Forms.ListBox lbNotifications;
     }
 }

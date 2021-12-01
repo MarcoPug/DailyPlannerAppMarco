@@ -157,5 +157,10 @@ namespace DailyPlannerAppMarco
             txtPassword.Clear();
             dataGridView1.ClearSelection();
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Report Sent to Manager");
+        }
     }
 }

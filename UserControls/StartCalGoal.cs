@@ -22,12 +22,8 @@ namespace DailyPlannerAppMarco.UserControls
             db = new MongoCRUD(Form1.dbName);
 
             fillAppInfo();
-        }
 
-        private void btnCalculate_Click(object sender, EventArgs e)
-        {
-            checkInfo();
-
+            addColor();
         }
         string gender;
         int weight;
@@ -180,6 +176,46 @@ namespace DailyPlannerAppMarco.UserControls
                 }
 
             }
+
+        }
+
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+            checkInfo();
+        }
+
+        private void addColor()
+        {
+
+
+            label1.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+            label2.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+            label3.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+            label4.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+            label5.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+            label6.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+            label7.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+            label8.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+            label9.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+            label10.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+
+            rbFemale.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+            rbMale.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+
+            btnCalc.FillColor = Items.CalorieItem.color;
+            btnCalc.BorderColor = ControlPaint.Dark(Items.CalorieItem.color);
+            btnCalc.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+
+            shape.FillColor = ControlPaint.Light(Items.CalorieItem.color);
+            shape.BorderColor = ControlPaint.Dark(Items.CalorieItem.color);
+            //shape.BackColor = ControlPaint.Light(Items.CalorieItem.color);
+
+
+            //btnHistory.FillColor = Items.itemToDo.color;
+
+            //btnEdit.FillColor = Items.itemToDo.color;
+
+            //listBox.ForeColor = Items.itemToDo.color;
 
         }
     }
