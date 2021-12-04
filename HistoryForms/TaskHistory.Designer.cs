@@ -170,9 +170,10 @@ namespace DailyPlannerAppMarco.HistoryForms
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnDelete);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "TaskHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TaskHistory";
+            this.Text = "Task History";
             this.Click += new System.EventHandler(this.TaskHistory_Click);
             this.ResumeLayout(false);
 

@@ -296,12 +296,12 @@ namespace DailyPlannerAppMarco.UserControls
             // 
             // lbNotifications
             // 
-            this.lbNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lbNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNotifications.FormattingEnabled = true;
-            this.lbNotifications.ItemHeight = 25;
-            this.lbNotifications.Location = new System.Drawing.Point(20, 24);
+            this.lbNotifications.ItemHeight = 16;
+            this.lbNotifications.Location = new System.Drawing.Point(17, 19);
             this.lbNotifications.Name = "lbNotifications";
-            this.lbNotifications.Size = new System.Drawing.Size(258, 104);
+            this.lbNotifications.Size = new System.Drawing.Size(468, 116);
             this.lbNotifications.TabIndex = 28;
             // 
             // UC_ToDoList

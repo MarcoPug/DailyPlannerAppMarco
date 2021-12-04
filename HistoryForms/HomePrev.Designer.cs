@@ -156,7 +156,7 @@ namespace DailyPlannerAppMarco.HistoryForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "HomePrev";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomePrev";
+            this.Text = "Home Previous";
             this.ResumeLayout(false);
             this.PerformLayout();
 

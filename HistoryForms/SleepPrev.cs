@@ -53,7 +53,6 @@ namespace DailyPlannerAppMarco.HistoryForms
 
         private void displayList()
         {
-            //checkIfReachedGoal();
             for (int i = 0; i < itemsList.SleepDailyListList[index].Count; i++)
             {
                 if (!itemsList.SleepDailyListList[index][i].isEmpty)
@@ -81,7 +80,6 @@ namespace DailyPlannerAppMarco.HistoryForms
 
                 index--;
                 txtDate.Text = itemsList.SleepDailyListList[index][0].wokeUp.ToShortDateString();
-                //currList = itemsList.calListList[index];
                 listBox.Items.Clear();
                 displayList();
             }

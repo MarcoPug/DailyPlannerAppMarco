@@ -182,7 +182,7 @@ namespace DailyPlannerAppMarco.AddItemForms
             cbTimeDays.BorderColor = Items.SleepItem.color;
             cbAMPM.BorderColor = Items.SleepItem.color;
 
-            //this.BackColor = ControlPaint.Light(Items.SleepItem.color);
+
 
             cbTimeDays.BackColor = Items.SleepItem.color;
             cbAMPM.BackColor = ControlPaint.Light(Items.SleepItem.color);
@@ -190,7 +190,7 @@ namespace DailyPlannerAppMarco.AddItemForms
             btnAdd.BorderColor = ControlPaint.Dark(Items.SleepItem.color);
             lblWelcome.BackColor = ControlPaint.Light(Items.SleepItem.color);
 
-            //shape.BackColor = ControlPaint.Dark(Items.SleepItem.color);
+
             shape.FillColor = ControlPaint.Light(Items.SleepItem.color);
             shape.BorderColor = ControlPaint.Dark(Items.SleepItem.color);
 

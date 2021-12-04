@@ -55,3 +55,4 @@ C:\Users\16099\source\repos\DailyPlannerAppMarco\DailyPlannerAppMarco\bin\Debug\
 C:\Users\16099\source\repos\DailyPlannerAppMarco\DailyPlannerAppMarco\bin\Debug\DailyPlannerAppMarco.application
 C:\Users\16099\source\repos\DailyPlannerAppMarco\DailyPlannerAppMarco\obj\Debug\DailyPlannerAppMarco.exe.manifest
 C:\Users\16099\source\repos\DailyPlannerAppMarco\DailyPlannerAppMarco\obj\Debug\DailyPlannerAppMarco.application
+C:\Users\16099\source\repos\DailyPlannerAppMarco\DailyPlannerAppMarco\obj\Debug\DailyPlannerAppMarco.UserControls.UC_UserAcc.resources

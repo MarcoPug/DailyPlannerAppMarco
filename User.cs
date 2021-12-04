@@ -17,15 +17,7 @@ namespace DailyPlannerAppMarco
         public string Email { get; set; }
         public string Password { get; set; }
 
-        //public AddressModel PrimaryAddress { get; set; }
 
-        /// 
-
-
-
-
-
-        //
 
         public userListInfo listInfo { get; set; }
         public userAppInfo appInfo { get; set; }
@@ -55,7 +47,6 @@ namespace DailyPlannerAppMarco
 
     public class userListInfo
     {
-        //[BsonId, BsonElement("calorie_list"), BsonRepresentation(BsonType.Array)]
         public List<itemToDo> userToDoItems { get; set; }
         public List<itemToDo> usertoDoItemsDeleted { get; set; }
         //

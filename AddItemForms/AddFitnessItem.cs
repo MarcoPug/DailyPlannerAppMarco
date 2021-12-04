@@ -30,26 +30,18 @@ namespace DailyPlannerAppMarco.AddItemForms
 
             btnAdd.FillColor = Items.FitnessItem.color;
 
-            btnAdd.Location = new Point(69, 183);//73,133
+            btnAdd.Location = new Point(69, 183);
 
             this.Size = new Size(374, 284);
 
             shape.Size = new Size(448, 307);
             shape.Location = new Point(-45, -31);
 
-            /*
-            var DistinctItems = itemsList.FitnessItems.GroupBy(xx => xx.group).Select(yy => yy.First());
-            foreach (var item in DistinctItems)
-            {
-                if (item.group != "")
-                    workoutDay.Items.Add(item.group);
-            }
-            */
 
 
             populateWorkoutDays();
 
-            //MessageBox.Show("count: " + itemsList.FitnessItems.Count);
+
 
             if (itemsList.FitnessItems.Count != 0)
             {
@@ -61,7 +53,7 @@ namespace DailyPlannerAppMarco.AddItemForms
 
         bool isEditing;
         int editIndex;
-        public AddFitnessItem(int x)//is editing
+        public AddFitnessItem(int x)
         {
             InitializeComponent();
 
@@ -80,7 +72,7 @@ namespace DailyPlannerAppMarco.AddItemForms
 
             btnAdd.FillColor = Items.FitnessItem.color;
 
-            btnAdd.Location = new Point(69, 183);//73,133
+            btnAdd.Location = new Point(69, 183);
 
             this.Size = new Size(374, 284);
 
@@ -89,7 +81,6 @@ namespace DailyPlannerAppMarco.AddItemForms
 
             populateWorkoutDays();
 
-            //workoutDay.SelectedIndex = itemsList.FitnessItems[editIndex].dayofweek;
 
             switch (itemsList.FitnessItems[editIndex].dayofweek)
             {
@@ -179,11 +170,9 @@ namespace DailyPlannerAppMarco.AddItemForms
             {
                 if (FitnessItem.workoutDayNames[i] != null)
                 {
-                    //MessageBox.Show(FitnessItem.workoutDayNames[i]);
+
                     workoutDay.Items.Add(FitnessItem.workoutDayNames[i]);
-                    //workoutDay.Items.Add(FitnessItem.workoutDayNames[i]);
-                    //MessageBox.Show(workoutDaysList.Items[workoutDaysList.SelectedIndex] + " should be " + FitnessItem.workoutDayNames[workoutDaysList.SelectedIndex]);
-                    //workoutDaysList.Items[workoutDaysList.SelectedIndex] = FitnessItem.workoutDayNames[workoutDaysList.SelectedIndex];
+
                 }
                 else if (FitnessItem.workoutDayNames[i] == null)
                 {
@@ -207,12 +196,10 @@ namespace DailyPlannerAppMarco.AddItemForms
                 MessageBox.Show("Please select a weekday");
 
             }
-            else//works
+            else
             {
 
-                //int index = workoutDay.Items.IndexOf("Empty");
-                //MessageBox.Show(workoutDay.Items[index] + " : sus");
-                //int index = onWhatWeekday.SelectedIndex;
+
                 bool overwrite = true;
                 int index = onWhatWeekday.SelectedIndex;
                 if (FitnessItem.workoutDayNames[index] != null && FitnessItem.workoutDayNames[index] != "Empty")
@@ -226,7 +213,10 @@ namespace DailyPlannerAppMarco.AddItemForms
                             if (itemsList.FitnessItems[i].group == FitnessItem.workoutDayNames[index])
                             {
                                 itemsList.FitnessItems[i].group = txtNameWorkout.Text;
+
+
                             }
+
                         }
                     }
                     else if (dialogResult == DialogResult.No)
@@ -236,33 +226,29 @@ namespace DailyPlannerAppMarco.AddItemForms
 
                 }
 
-                // FitnessItem.workoutDayNames[onWhatWeekday.SelectedIndex]//cardio
-                // txtNameWorkout.Text // cardio
 
-
-                // FitnessItem.weekdayNames[onWhatWeekday.SelectedIndex] // Sunday
-                // onWhatWeekday.SelectedItem // Sunday
 
                 if (overwrite)
                 {
-                    FitnessItem.workoutDayNames[index] = txtNameWorkout.Text; // WorkoutNames[0] = Cardio
-                    FitnessItem.weekdayNames[index] = onWhatWeekday.SelectedItem.ToString(); // WeekdayNames[0] = Sunday
+                    for (int i = 0; i < itemsList.FitnessItems.Count; i++)
+                    {
+                        if (itemsList.FitnessItems[i].group == FitnessItem.workoutDayNames[index])
+                        {
+
+                            itemsList.FitnessItems[i].group = txtNameWorkout.Text;
+
+
+                        }
+
+                    }
+
+                    FitnessItem.workoutDayNames[index] = txtNameWorkout.Text; 
+                    FitnessItem.weekdayNames[index] = onWhatWeekday.SelectedItem.ToString(); 
 
                     this.Close();
                 }
 
                 
-
-
-
-
-
-                /*
-                for (int i = 0; i < FitnessItem.workoutDayNames.Length; i++)
-                {
-                    FitnessItem.workoutDayNames[i] = onWhatWeekday.SelectedItem.ToString();
-                    MessageBox.Show(FitnessItem.workoutDayNames[i] = onWhatWeekday.SelectedItem.ToString());
-                }*/
                 
             }
 
@@ -308,12 +294,7 @@ namespace DailyPlannerAppMarco.AddItemForms
                     }
 
 
-                    //MessageBox.Show("weekday?: " + FitnessItem.weekdayNames[i]);
-                    //item.dayofweek = FitnessItem.weekdayNames[i];
 
-
-                    //MessageBox.Show("weekday?: " + item.dayofweek);
-                    //item.dayofweek = 
 
                     item.title = txtName.Text;
                     item.group = workoutDay.SelectedItem.ToString();
@@ -321,7 +302,7 @@ namespace DailyPlannerAppMarco.AddItemForms
                     item.dayofweek = FitnessItem.weekdayNames[workoutDay.SelectedIndex];
                     prevIndexWorkout = workoutDay.SelectedIndex;
 
-                    //MessageBox.Show("worked properly");
+
                     itemsList.FitnessItems.Add(item);
                 }
                 else

@@ -18,14 +18,9 @@ namespace DailyPlannerAppMarco.HistoryForms
         {
             InitializeComponent();
 
-            //MessageBox.Show("count: " + itemsList.FitnessWorkoutTimes.Count);
-            for (int i = 0; i < itemsList.FitnessWorkoutTimes.Count; i++)
-            {
-                //MessageBox.Show("number : " + i + ":  " +itemsList.FitnessWorkoutTimes[i].workoutTime + " : " + itemsList.FitnessWorkoutTimes[i].itemDate);
-            }
 
             index = itemsList.FitnessWorkoutTimes.Count - 1;
-            //int itemInList = 0;
+
 
             if (index != -1)
             {
@@ -64,9 +59,7 @@ namespace DailyPlannerAppMarco.HistoryForms
 
         private void displayList()
         {
-            //MessageBox.Show("count: "+itemsList.calListList.Count);
 
-            //listBox.Items.Add(itemsList.FitnessWorkoutTimes[index].workoutTime + "");
             lblFitnessGoal.Text = itemsList.FitnessWorkoutTimes[index].workoutTime.ToString();
             txtDate.Text = itemsList.FitnessWorkoutTimes[index].itemDate.ToString("MM/dd/yyyy");
 
@@ -94,8 +87,7 @@ namespace DailyPlannerAppMarco.HistoryForms
 
 
                 index--;
-                //txtDate.Text = itemsList.calListList[index][0].itemDate.ToShortDateString();
-                //currList = itemsList.calListList[index];
+
                 listBox.Items.Clear();
                 displayList();
             }
@@ -106,8 +98,6 @@ namespace DailyPlannerAppMarco.HistoryForms
             if (index < itemsList.FitnessWorkoutTimes.Count - 1)
             {
                 index++;
-
-                //txtDate.Text = itemsList.calListList[index][0].itemDate.ToShortDateString();
 
                 listBox.Items.Clear();
                 displayList();

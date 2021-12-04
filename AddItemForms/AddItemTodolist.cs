@@ -37,7 +37,7 @@ namespace DailyPlannerAppMarco.AddItemForms
         int listIndex = 0;
         bool editing = false;
 
-        public AddItemTodolist(int x)//is editing
+        public AddItemTodolist(int x)
         {
             InitializeComponent();
             listIndex = x;
@@ -56,12 +56,11 @@ namespace DailyPlannerAppMarco.AddItemForms
                     cGroup.Items.Add(item.group);
             }
 
-            //MessageBox.Show(itemsList.toDoItems[listIndex].getDueDate());
 
             txtName.Text = itemsList.toDoItems[listIndex].title;
             cGroup.Text = itemsList.toDoItems[listIndex].group;
             txtDesc.Text = itemsList.toDoItems[listIndex].description;
-            //txtName.ReadOnly = true;
+
 
 
             if (itemsList.toDoItems[listIndex].important)
@@ -120,7 +119,7 @@ namespace DailyPlannerAppMarco.AddItemForms
 
             int test = 0;
             bool success = Int32.TryParse(txtDays.Text, out test);
-            //MessageBox.Show(test + ": <-- tryparse");
+
             if (txtName.Text == "")
             {
                 MessageBox.Show("Please enter a valid name");
@@ -145,7 +144,7 @@ namespace DailyPlannerAppMarco.AddItemForms
                 itemToDo item = new itemToDo();
                 
 
-                //var dateNow = DateTime.Now;
+
                 DateTime date;
 
                 int index = cbTimeDays.SelectedIndex;
@@ -159,11 +158,9 @@ namespace DailyPlannerAppMarco.AddItemForms
                 if (index == 11 || index == 23 )
                 {
                     index = index - 12;
-                    //MessageBox.Show("IN 12 IF STATEMENT, INDEX: " + index);
-                }
-                //MessageBox.Show("index: "+ index);
 
-                //date = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, index+1, 0, 0);
+                }
+
                 date = new DateTime(Form1.theCurrentDT().Year, Form1.theCurrentDT().Month, Form1.theCurrentDT().Day, index + 1, 0, 0);
 
                 item.title = txtName.Text;
@@ -180,18 +177,12 @@ namespace DailyPlannerAppMarco.AddItemForms
 
 
                 itemsList.toDoItems.Add(item);
-                //MessageBox.Show("Due Date: " + item.getDueDate());
-                //MessageBox.Show("Name: " + item.title);
-                //MessageBox.Show("important: " + item.important);
-                //MessageBox.Show("repetitve: " + item.repeatDays);
-                //MessageBox.Show("Desc: " + item.description);
-                //MessageBox.Show("ID: "   + item.MyId);
+
                 this.Close();
             }
             else if(editing == true)
             {
-             
-                //var dateNow = DateTime.Now;
+
                 DateTime date;
 
                 int index = cbTimeDays.SelectedIndex;
@@ -205,11 +196,9 @@ namespace DailyPlannerAppMarco.AddItemForms
                 if (index == 11 || index == 23)
                 {
                     index = index - 12;
-                    //MessageBox.Show("IN 12 IF STATEMENT, INDEX: " + index);
                 }
-                //MessageBox.Show("index: "+ index);
 
-                //date = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, index+1, 0, 0);
+
                 date = new DateTime(Form1.theCurrentDT().Year, Form1.theCurrentDT().Month, Form1.theCurrentDT().Day, index + 1, 0, 0);
 
                 itemsList.toDoItems[listIndex].title = txtName.Text;

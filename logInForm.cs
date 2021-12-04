@@ -16,8 +16,7 @@ namespace DailyPlannerAppMarco
     public partial class logInForm : Form
     {
         readonly MongoCRUD db;
-        //int logCounter = 1;
-        //int regCounter = 0;
+
         int counter = 0;
         public logInForm()
         {
@@ -56,7 +55,7 @@ namespace DailyPlannerAppMarco
             Guid testId = findAccount(db);
             if (testId == new Guid("00000000-0000-0000-0000-000000000000"))
             {
-                //MessageBox.Show("Invalid login");
+
                 lblError.Text = "Invalid login";
             }
             else
@@ -72,7 +71,7 @@ namespace DailyPlannerAppMarco
         {
 
             
-            if (isUniqueAccount(db) && txtEmail.Text != "" && txtPassword.Text != "" && txtEmail.Text.Contains("@"))
+            if (isUniqueAccount(db) && txtEmail.Text != "" && txtPassword.Text != "" && txtEmail.Text.Contains("@") && txtPassword.TextLength > 3)
             {
                 User user = new User
                 {
@@ -100,7 +99,6 @@ namespace DailyPlannerAppMarco
             }
             else
             {
-                //MessageBox.Show("Incorrent Account information");
                 lblError.Text = "Incorrent Account information";
             }
         }
@@ -111,7 +109,7 @@ namespace DailyPlannerAppMarco
             var recs = db.LoadRecords<User>(Form1.dbName);
             foreach (var rec in recs)
             {
-                //MessageBox.Show($"{rec.Id}: {rec.FirstName} {rec.LastName}");
+
                 if (txtEmail.Text == rec.Email)
                 {
                     unique = false;
@@ -125,7 +123,7 @@ namespace DailyPlannerAppMarco
             var recs = db.LoadRecords<User>(Form1.dbName);
             foreach (var rec in recs)
             {
-                //MessageBox.Show($"{rec.Id}: {rec.FirstName} {rec.LastName}");
+
                 if (txtEmail.Text == rec.Email && txtPassword.Text == rec.Password)
                 {
                     return rec.Id;
@@ -146,7 +144,7 @@ namespace DailyPlannerAppMarco
             var recs = db.LoadRecords<User>(Form1.dbName);
             foreach (var rec in recs)
             {
-                //MessageBox.Show($"{rec.Id}: {rec.FirstName} {rec.LastName}");
+
                 if ("admin" == rec.Email)
                 {
                     count++;

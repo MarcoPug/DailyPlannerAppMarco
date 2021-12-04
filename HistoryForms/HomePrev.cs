@@ -41,9 +41,6 @@ namespace DailyPlannerAppMarco.HistoryForms
             shape.FillColor = ControlPaint.Light(Color.FromArgb(120, 179, 84));
             shape.BorderColor = ControlPaint.Dark(Color.FromArgb(120, 179, 84));
 
-            //shape2.FillColor = ControlPaint.Light(Color.FromArgb(120, 179, 84));
-            //shape2.BorderColor = ControlPaint.Dark(Color.FromArgb(120, 179, 84));
-
             lblAvgSleep.BackColor = ControlPaint.Light(Color.FromArgb(120, 179, 84));
             avgWorkoutTime.BackColor = ControlPaint.Light(Color.FromArgb(120, 179, 84));
             lblMonthCalTotal.BackColor = ControlPaint.Light(Color.FromArgb(120, 179, 84));
@@ -56,9 +53,7 @@ namespace DailyPlannerAppMarco.HistoryForms
             displayAvgFitness();
             avgSleepDay();
         }
-        //int monthlyCalsTotal;
-        //TimeSpan workoutTimesTotal;
-        //string sleepTimeTotal;
+
         private void displayMonthlyCalsTotal()
         {
             int monthlyCalsTotal = 0;

@@ -173,7 +173,7 @@ namespace DailyPlannerAppMarco.HistoryForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FitnessHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FitnessHistory";
+            this.Text = "Fitness History";
             this.Click += new System.EventHandler(this.FitnessHistory_Click);
             this.ResumeLayout(false);
 

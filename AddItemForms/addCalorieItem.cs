@@ -49,7 +49,6 @@ namespace DailyPlannerAppMarco.AddItemForms
                 {
                     UC_Calories.calorieGoal = calgoal;
                     currRecord.bmrInfo.calorieGoal = calgoal;
-                    //MessageBox.Show("cal goal updated successfully");
                     this.Close();
                 }
                 db.UpsertRecord(Form1.dbName, Form1.currId, currRecord);
@@ -58,8 +57,6 @@ namespace DailyPlannerAppMarco.AddItemForms
             {
                 int test = 0;
                 bool success = Int32.TryParse(txtCalories.Text, out test);
-                //MessageBox.Show(test + ": <-- tryparse");
-
 
 
                 if (txtName.Text == "")
@@ -88,7 +85,6 @@ namespace DailyPlannerAppMarco.AddItemForms
         private void addCalorieItem_Load(object sender, EventArgs e)
         {
             this.BackColor = ControlPaint.Light(Items.CalorieItem.color);
-            //this.BackColor = ControlPaint.Dark(Items.CalorieItem.color);
         }
     }
 }

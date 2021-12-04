@@ -88,11 +88,13 @@ namespace DailyPlannerAppMarco.UserControls
                             listboxFitness.Items.Add(itemsList.FitnessItems[i].title);
                         }
                     }
+                    lblWorkoutsLeft.ForeColor = Color.Black;
                     lblWorkoutsLeft.Text = "Workouts Today";
                     WorkoutsCount.Text = listboxFitness.Items.Count.ToString();
                 }
                 else
                 {
+                    lblWorkoutsLeft.ForeColor = Color.DarkGreen;
                     lblWorkoutsLeft.Text = "Completed at";
                     WorkoutsCount.Text = StartWorkout.workoutTimeToday.ToString();
                 }
@@ -150,7 +152,7 @@ namespace DailyPlannerAppMarco.UserControls
 
 
             bs.DataSource = myObjList;
-            tasksNotDone.DataSource = myObjList;//////
+            tasksNotDone.DataSource = myObjList;
             BindingList<itemToDo> filtered = new BindingList<itemToDo>(myObjList.Where(obj => obj.isChecked != true).ToList());
             tasksNotDone.DataSource = filtered;
 
@@ -158,15 +160,7 @@ namespace DailyPlannerAppMarco.UserControls
 
             tasksNotDone.Update();
             tasksNotDone.DisplayMember = "title";
-            //if (!itemsList.toDoItems[i].isChecked)
-            //tasksNotDone.Items.Add(itemsList.toDoItems[i].title);
 
-            //var DistinctItems = itemsList.toDoItems.GroupBy(xx => xx.group).Select(yy => yy.First());
-            //foreach (var item in DistinctItems)
-            //{
-            //    if (item.group != "")
-            //        cGroup.Items.Add(item.group);
-            //}
 
             if (tasksNotDone.Items.Count == 0 && !itemsList.toDoItems.Any())
             {
@@ -217,26 +211,7 @@ namespace DailyPlannerAppMarco.UserControls
 
         private void setCalender()
         {
-            //if (Form1.fakeTime == true)
-            //{
-            //    week1.Text = Form1.current.AddDays(-3).DayOfWeek.ToString();
-            //    week2.Text = Form1.current.AddDays(-2).DayOfWeek.ToString();
-            //    week3.Text = Form1.current.AddDays(-1).DayOfWeek.ToString();
-            //    week4.Text = Form1.current.DayOfWeek.ToString();
-            //    week5.Text = Form1.current.AddDays(+1).DayOfWeek.ToString();
-            //    week6.Text = Form1.current.AddDays(+2).DayOfWeek.ToString();
-            //    week7.Text = Form1.current.AddDays(+3).DayOfWeek.ToString();
-            //}
-            //else
-            //{
-            //    week1.Text = DateTime.Now.AddDays(-3).DayOfWeek.ToString();
-            //    week2.Text = DateTime.Now.AddDays(-2).DayOfWeek.ToString();
-            //    week3.Text = DateTime.Now.AddDays(-1).DayOfWeek.ToString();
-            //    week4.Text = DateTime.Now.DayOfWeek.ToString();
-            //    week5.Text = DateTime.Now.AddDays(+1).DayOfWeek.ToString();
-            //    week6.Text = DateTime.Now.AddDays(+2).DayOfWeek.ToString();
-            //    week7.Text = DateTime.Now.AddDays(+3).DayOfWeek.ToString();
-            //}
+
 
             week1.Text = Form1.theCurrentDT().AddDays(-3).DayOfWeek.ToString();
             week2.Text = Form1.theCurrentDT().AddDays(-2).DayOfWeek.ToString();
@@ -280,9 +255,9 @@ namespace DailyPlannerAppMarco.UserControls
 
             }
 
-            //int taskCount = itemsList.toDoItems.Count;
+
             int taskCount = itemsList.toDoItems.Count;
-            for (int i = 0; i < taskCount; i++) //MessageBox.Show(itemsList.toDoItems[i].DateCreated.ToShortDateString());
+            for (int i = 0; i < taskCount; i++) 
             {
                 if (itemsList.toDoItems[i].repeatDays == 0)
                 {
@@ -330,7 +305,7 @@ namespace DailyPlannerAppMarco.UserControls
                 {
                     itemsW4++;
                 }
-                //day of week numbers % repeatdays
+                
 
 
 
@@ -353,7 +328,7 @@ namespace DailyPlannerAppMarco.UserControls
                     Rectangle rectangle = new Rectangle(horizontalOffset, verticalOffset, w, h);
                     if (rectangle.Contains(e.Location))
                     {
-                        //MessageBox.Show("row  " +  row + "\ncolumn:  " + column);
+                        
 
                         if (row == 1)
                         {

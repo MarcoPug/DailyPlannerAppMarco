@@ -59,11 +59,6 @@ namespace DailyPlannerAppMarco.UserControls
 
 
 
-            //btnHistory.FillColor = Items.itemToDo.color;
-
-            //btnEdit.FillColor = Items.itemToDo.color;
-
-            //listBox.ForeColor = Items.itemToDo.color;
 
         }
         public static int getCalsLeft()
@@ -198,7 +193,6 @@ namespace DailyPlannerAppMarco.UserControls
 
                 MoveItem(listBox, 1);
 
-                //listBox.SetSelected(selectedIndex, true);
             }
         }
 

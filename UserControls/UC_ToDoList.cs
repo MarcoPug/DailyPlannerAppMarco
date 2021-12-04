@@ -23,14 +23,13 @@ namespace DailyPlannerAppMarco.UserControls
         {
             InitializeComponent();
             setBind();
-            //listBox.DisplayMember = "title";
+
 
             db = new MongoCRUD(Form1.dbName);
 
 
             addColor();
 
-            //setTasks();
 
             
 
@@ -43,8 +42,7 @@ namespace DailyPlannerAppMarco.UserControls
 
 
             cGroup.SelectedIndex = -1;
-            //cGroup.SelectionLength = 0;
-            //cGroup.Text = "Filter";
+
             SetNotifications();
         }
 
@@ -56,15 +54,12 @@ namespace DailyPlannerAppMarco.UserControls
                 System.TimeSpan diff = DateTime.Now.Subtract(itemsList.toDoItems[i].dueDate);
                 System.TimeSpan diff2 = current.Subtract(itemsList.toDoItems[i].dueDate);
 
-                //TimeSpan span = itemsList.toDoItems[i].dueDate - DateTime.Now;
-                //MessageBox.Show(span.ToString());
-                //MessageBox.Show(diff.ToString() + "");
 
 
-                //MessageBox.Show("" + itemsList.toDoItems[i].getDueDate());
-                //MessageBox.Show("diff: " + diff);
+
+
                 string noti = "";
-                //is.important
+
                 if (itemsList.toDoItems[i].hasDueDate && itemsList.toDoItems[i].isChecked == false && diff.Hours >= 0)
                 {//if item is important and has a due date and item is Not checked and missed by 0 or more hours (more than 60 minutes since fail to complete)
                     if ((diff.Hours < 6 && diff.Hours >= 1) || (diff2.Hours < 6 && diff2.Hours >= 1))//missed within 1-6 hours
@@ -73,15 +68,12 @@ namespace DailyPlannerAppMarco.UserControls
                         noti = "You Should do: " + itemsList.toDoItems[i].title;
                     else if ((diff.Hours >= 6) || (diff2.Hours >= 6))//missed over 6 hours ago
                         noti = "You Forgot to do: " + itemsList.toDoItems[i].title + " Today!";
-                    //itemsList.toDoItems[i].canShowMessage = false;
 
-                    //MessageBox.Show(DateTime.Now + "\n" + "MINUS" + "\n" + itemsList.toDoItems[i].dueDate + "\n" + "EQUALS:" + "\n" + diff.Hours);
 
                     lbNotifications.Items.Add(noti);
 
-                    //MessageBox.Show("(diff.Hours >= 0) : " + diff.Hours);
                 }
-                //MessageBox.Show(DateTime.Now.ToString() + "<< current . list >> " + itemsList.toDoItems[i].dueDate);
+
                 
             }
             if (lbNotifications.Items.Count == 0)
@@ -106,7 +98,6 @@ namespace DailyPlannerAppMarco.UserControls
 
             btnEdit.FillColor = Items.itemToDo.color;
 
-            //listBox.ForeColor = Items.itemToDo.color;
             cGroup.BorderColor = ControlPaint.Light(Items.itemToDo.color);
 
         }
@@ -168,14 +159,14 @@ namespace DailyPlannerAppMarco.UserControls
                 
                 if (itemsList.toDoItems[i].isChecked)
                 {
-                    //MessageBox.Show(itemsList.toDoItems[i].title + "  set to true?: " + itemsList.toDoItems[i].isChecked);
+
                     
 
                     for (int x = 0; x < listBox.Items.Count; x++)
                     {
                         if (listBox.Items[x].ToString() == itemsList.toDoItems[i].ToString())
                         {
-                            //MessageBox.Show(itemsList.toDoItems[i].title + "  which is also: " + listBox.Items[x].ToString() + "\nbeing set to: " + itemsList.toDoItems[i].isChecked);
+                            
                             listBox.SetItemChecked(x, itemsList.toDoItems[i].isChecked);
                         }
 
@@ -196,9 +187,9 @@ namespace DailyPlannerAppMarco.UserControls
                 else
                 {
                     itemsList.toDoItems[i].isChecked = false;
-                    //MessageBox.Show("unchecked at position " + i as string);
+
                 }
-                //MessageBox.Show(itemsList.toDoItems[i].MyId + ""); //count all ids
+
             }
         }
 

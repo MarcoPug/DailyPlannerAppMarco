@@ -156,7 +156,7 @@ namespace DailyPlannerAppMarco.AddItemForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "addSleepItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "addSleepItem";
+            this.Text = "Add Sleep";
             this.Load += new System.EventHandler(this.addSleepItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

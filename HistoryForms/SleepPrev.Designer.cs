@@ -157,7 +157,7 @@ namespace DailyPlannerAppMarco.HistoryForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SleepPrev";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SleepPrev";
+            this.Text = "Sleep Previous";
             this.ResumeLayout(false);
             this.PerformLayout();
 

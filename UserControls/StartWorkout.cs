@@ -16,17 +16,17 @@ namespace DailyPlannerAppMarco.UserControls
     {
         
         System.Timers.Timer t;
-        //System.Timers.Timer tBreak;
+
         int h, m, s;
-        //static bool didAlready = false;
+
 
         List<string> workoutTimes = new List<string>();
 
-        //List<int> workoutIndex = new List<int>();
 
 
 
-        //DateTime workoutsTodayDate;
+
+
 
         public static bool completed = false;
 
@@ -38,32 +38,7 @@ namespace DailyPlannerAppMarco.UserControls
         {
             addColors();
 
-            //workoutsTodayDate = Form1.theCurrentDT();
 
-            //MessageBox.Show(workoutsTodayDate.DayOfWeek.ToString());
-
-
-            //var sb = new System.Text.StringBuilder();
-            //for (int i = 0; i < itemsList.FitnessItems.Count; i++)
-            //{
-            //    if (itemsList.FitnessItems[i].dayofweek == workoutsTodayDate.DayOfWeek.ToString())
-            //    {
-            //        //sb.AppendLine(itemsList.FitnessItems[i].title + "\n");
-
-            //        //workouts[i] = itemsList.FitnessItems[i].title;
-            //        workouts.Add(itemsList.FitnessItems[i].title);
-
-
-            //    }
-
-            //}
-
-            //for (int i = 0; i < workouts.Count; i++)
-            //{
-            //    MessageBox.Show("workout #" + i + " is " + workouts[i]);
-            //}
-
-            //label1.Text = sb.ToString();
 
             workoutsToday.Clear();
             getWorkouts();
@@ -71,7 +46,7 @@ namespace DailyPlannerAppMarco.UserControls
             if (workoutsToday.Count <= 0)
             {
                 MessageBox.Show("You have no workouts scheduled today");
-                this.Close(); ////
+                this.Close(); 
             }
             else
             {
@@ -79,7 +54,7 @@ namespace DailyPlannerAppMarco.UserControls
             }
 
 
-            //MessageBox.Show("number of workouts we will do: " + workouts.Count);
+
 
             t = new System.Timers.Timer();
             t.Interval = 1000;
@@ -106,10 +81,7 @@ namespace DailyPlannerAppMarco.UserControls
                 }
             }
 
-            for (int i = 0; i < workoutsToday.Count; i++)
-            {
-                //MessageBox.Show((i + 1) + " workout is : " + workoutsToday[i].title + "\nsets: " + workoutsToday[i].sets + "\nreps: " + workoutsToday[i].reps);
-            }
+
 
         }
 
@@ -120,7 +92,7 @@ namespace DailyPlannerAppMarco.UserControls
                 if (itemsList.FitnessItems[i].dayofweek == Form1.theCurrentDT().DayOfWeek.ToString())
                 {
                     workoutsToday.Add(itemsList.FitnessItems[i]);
-                    //workoutIndex[i] = i;
+
                 }
 
             }
@@ -129,7 +101,7 @@ namespace DailyPlannerAppMarco.UserControls
 
             tempSets = workoutsToday[0].sets;
             tempReps = workoutsToday[0].reps;
-            //MessageBox.Show(tempSets.ToString() + " sets and " + tempReps + " reps!");
+
 
             totalSets.Text = tempSets.ToString();
             totalReps.Text = tempReps.ToString();
@@ -182,26 +154,23 @@ namespace DailyPlannerAppMarco.UserControls
             else
             {
 
-                //MessageBox.Show("if " + itemsList.FitnessItems[workout].reps + " != " + tempReps);
+
                 if ((workoutsToday[0].reps != 0 || workoutsToday[0].reps != tempReps) && tempReps != 1)
                 {
-                    //MessageBox.Show("entered reps");
+
                     tempReps--;
                     currReps.Text = tempReps.ToString();
-                    //MessageBox.Show(tempReps + ": remaining reps");
+
 
                 }
                 else if ((workoutsToday[workout].sets != 0 || workoutsToday[workout].sets != tempSets) && tempSets != 1)
                 {
-                    //MessageBox.Show("entered sets");
+
                     tempSets--;
                     tempReps = workoutsToday[workout].reps;//reset reps
                     currSets.Text = tempSets.ToString();
                     currReps.Text = tempReps.ToString();
-                    //MessageBox.Show(tempSets + ": remaining sets");
 
-                    //currSets.Text = totalSets.Text = tempSets.ToString();
-                    //currReps.Text = itemsList.FitnessItems[0].reps.ToString();
 
                 }
                 else
@@ -220,7 +189,7 @@ namespace DailyPlannerAppMarco.UserControls
             t.Stop();
             workout++;
 
-            //MessageBox.Show(txtWorkout.Text + " : " + txtResult.Text);
+
             workoutTimes.Add(txtResult.Text);
 
             h = 0;
@@ -232,7 +201,6 @@ namespace DailyPlannerAppMarco.UserControls
             if (workout < workoutsToday.Count)
             {
 
-                //MessageBox.Show(workouts[i] + "\n");
                 txtWorkout.Text = workoutsToday[workout].title;
 
 
@@ -245,7 +213,7 @@ namespace DailyPlannerAppMarco.UserControls
 
                 currSets.Text = totalSets.Text = tempSets.ToString();
                 currReps.Text = totalReps.Text = tempReps.ToString();
-                //t.Start();
+
 
             }
             else
@@ -263,17 +231,14 @@ namespace DailyPlannerAppMarco.UserControls
                 MessageBox.Show(sb.ToString() + "\nWith a total time of " + times.ToString());
 
                 workoutTimeToday = times;
-                //MessageBox.Show("workoutTimeToday.workoutTime: " + workoutTimeToday.workoutTime);
 
-                //didAlready = true;
                 completed = true;
                 this.Close();
             }
         }
         public static List<FitnessItem> workoutsToday = new List<FitnessItem>();
         public static TimeSpan workoutTimeToday = TimeSpan.Zero;
-        //public static List<string> workouts = new List<string>(); ///
-        //List<FitnessItem> workoutTimesToday = new List<FitnessItem>();
+
         private void btnNextSet_Click(object sender, EventArgs e)
         {
             if (!t.Enabled || txtResult.Text == "00:00:00")
@@ -282,20 +247,16 @@ namespace DailyPlannerAppMarco.UserControls
             }
             else
             {
-                //MessageBox.Show("workout: " + workout);
-                //MessageBox.Show("(workoutsToday[workout].sets: " + workoutsToday[workout].sets);
+
 
                 if ((workoutsToday[workout].sets != 0 || workoutsToday[workout].sets != tempSets) && tempSets != 1)
                 {
-                    //MessageBox.Show("entered sets");
+
                     tempSets--;
                     tempReps = workoutsToday[workout].reps;//reset reps
                     currSets.Text = tempSets.ToString();
                     currReps.Text = tempReps.ToString();
-                    //MessageBox.Show(tempSets + ": remaining sets");
 
-                    //currSets.Text = totalSets.Text = tempSets.ToString();
-                    //currReps.Text = itemsList.FitnessItems[0].reps.ToString();
 
                 }
                 else

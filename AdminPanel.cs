@@ -34,7 +34,6 @@ namespace DailyPlannerAppMarco
             var database = server.GetDatabase(Form1.dbName);
             var collection = database.GetCollection<User>(Form1.dbName);
 
-            //var entity = collection.FindAll();
 
 
             BindingList<User> doclist = new BindingList<User>();
@@ -42,8 +41,7 @@ namespace DailyPlannerAppMarco
             foreach (var deger in collection.FindAll())
             {
                 doclist.Add(deger);
-                //string[] row1 = new string[] { deger.deger1.ToString() };
-                //dataGridView1.Rows.Add(row1);
+
                 Application.DoEvents();
             }
             dataGridView1.DataSource = doclist;
@@ -65,7 +63,7 @@ namespace DailyPlannerAppMarco
                 var recs = db.LoadRecords<User>(Form1.dbName);
                 foreach (var rec in recs)
                 {
-                    //MessageBox.Show($"{rec.Id}: {rec.FirstName} {rec.LastName}");
+
                     if (txtEmail.Text == rec.Email)
                     {
                         unique = false;
@@ -93,8 +91,7 @@ namespace DailyPlannerAppMarco
 
                         }
                     };
-                    //userCollection.InsertOne(user);
-                    //collection.InsertOne(user);
+
                     db.InsertRecord(Form1.dbName, user);
                     loadData();
                 }
@@ -127,10 +124,9 @@ namespace DailyPlannerAppMarco
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //var filterDef = Builders<User>.Filter.Eq(a => a.Email, txtEmail.Text);
-            //userCollection.DeleteOne(filterDef);
+
             Guid testId = Guid.Parse(selectedID);
-            //testId = findAccount(db);
+
             if (testId != new Guid("00000000-0000-0000-0000-000000000000"))
             {
                 var oneRec = db.LoadRecordById<User>(Form1.dbName, testId);

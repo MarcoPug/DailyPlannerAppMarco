@@ -15,7 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\16099\Desktop\publos\</PublishUrl>
+    <PublishUrl>C:\Users\16099\Desktop\plannerApp\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -283,6 +283,12 @@
     <Compile Include="UserControls\UC_ToDoList.Designer.cs">
       <DependentUpon>UC_ToDoList.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_UserAcc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_UserAcc.Designer.cs">
+      <DependentUpon>UC_UserAcc.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddItemForms\addCalorieItem.resx">
       <DependentUpon>addCalorieItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_ToDoList.resx">
       <DependentUpon>UC_ToDoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_UserAcc.resx">
+      <DependentUpon>UC_UserAcc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DailyPlannerAppMarco_TemporaryKey.pfx" />
     <None Include="libmongocrypt.dylib" />

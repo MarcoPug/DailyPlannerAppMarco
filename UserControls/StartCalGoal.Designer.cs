@@ -297,7 +297,9 @@ namespace DailyPlannerAppMarco.UserControls
             this.Controls.Add(this.txtFeet);
             this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.shape);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "StartCalGoal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculate Daily Calories";
             this.ResumeLayout(false);
             this.PerformLayout();

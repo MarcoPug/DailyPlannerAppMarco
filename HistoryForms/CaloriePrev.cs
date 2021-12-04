@@ -21,43 +21,13 @@ namespace DailyPlannerAppMarco.HistoryForms
             InitializeComponent();
 
             index = itemsList.calListList.Count - 1;
-            //int itemInList = 0;
+
 
             if (index != -1)
             {
-                //MessageBox.Show("index: " + index);
-                //while (itemsList.calListList[index][itemInList].isEmpty)
-                //{
 
-                //    itemInList++;
-                //    MessageBox.Show("title: " + itemsList.calListList[index][itemInList].title +
-                //        "\nitemInList: " + itemInList + "\nitemsList.calListList[index].Count: " +
-                //        itemsList.calListList[index].Count + "\nindex + "+index);
-                //    if (itemInList > itemsList.calListList[index].Count)
-                //    {
-                //        MessageBox.Show("sus and move on");
-                //        index++;
-                //    }
-                //}
-                //MessageBox.Show("is empty?: "+itemsList.calListList[index][0].isEmpty);
 
-                //MessageBox.Show("is empty? " + itemsList.calListList[index][0].isEmpty);
 
-                if (!itemsList.calListList[index][0].isEmpty)
-                {
-                    //itemsList.calListList.RemoveAt(index);
-                    //index++;
-
-                }
-
-                if (itemsList.calListList[index][0].isEmpty)
-                {
-                    //MessageBox.Show("is empty?: " + itemsList.calListList[index][0].isEmpty);
-
-                    //itemsList.calListList[index].RemoveAt(0);
-                    //itemsList.calListList.RemoveAt(index);
-                    //index++;                
-                }
 
                 txtDate.Text = itemsList.calListList[index][0].itemDate.ToShortDateString();
                 displayList();
@@ -95,7 +65,7 @@ namespace DailyPlannerAppMarco.HistoryForms
 
         private void displayList()
         {
-            //MessageBox.Show("count: "+itemsList.calListList.Count);
+
             checkIfReachedGoal();
             for (int i = 0; i < itemsList.calListList[index].Count; i++)
             {
@@ -136,11 +106,7 @@ namespace DailyPlannerAppMarco.HistoryForms
 
         private void CaloriePrev_Load(object sender, EventArgs e)
         {
-            //this.BackColor = ControlPaint.Light(Items.CalorieItem.color);
-            //this.BackColor = Items.CalorieItem.color;
 
-            //listBox.BackColor = ControlPaint.Light(Items.CalorieItem.color);
-            //txtDate.BackColor = ControlPaint.Light(Items.CalorieItem.color);
         }
 
 
@@ -152,7 +118,7 @@ namespace DailyPlannerAppMarco.HistoryForms
 
                 index--;
                 txtDate.Text = itemsList.calListList[index][0].itemDate.ToShortDateString();
-                //currList = itemsList.calListList[index];
+
                 listBox.Items.Clear();
                 listBox2.Items.Clear();
                 displayList();

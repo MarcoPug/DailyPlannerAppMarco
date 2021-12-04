@@ -171,7 +171,7 @@ namespace DailyPlannerAppMarco.HistoryForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CaloriePrev";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CaloriePrev";
+            this.Text = "Calorie Previous";
             this.Load += new System.EventHandler(this.CaloriePrev_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

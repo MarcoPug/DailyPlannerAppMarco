@@ -21,36 +21,7 @@ namespace DailyPlannerAppMarco.Items
         {
             get { return myId; }
         }
-        /*
-        public DateTime dueDate;
 
-        public string getDueDate()
-        {
-            return dueDate.ToString("h:mm tt");
-
-        }
-        public DateTime DateCreated
-        {
-            get
-            {
-                return this.dateCreated.HasValue
-                   ? this.dateCreated.Value
-                   : DateTime.Now;
-            }
-
-            set { this.dateCreated = value; }
-        }
-
-        private DateTime? dateCreated = null;
-
-        public DateTime dateRecycled;
-        public bool isRecycled;
-
-
-        public string title { get; set; }
-        public bool hasDueDate;
-        public string group = "";
-        */
 
         public string description = "";
         public bool repetitive;
@@ -79,7 +50,6 @@ namespace DailyPlannerAppMarco.Items
 
         }
 
-        //public DeleteItem(int id)
 
         public override string ToString()
 

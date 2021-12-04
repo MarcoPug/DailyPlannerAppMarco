@@ -33,10 +33,7 @@ namespace DailyPlannerAppMarco.UserControls
 
             listBox.ClearSelected();
 
-            for (int i = 0; i < itemsList.SleepDailyList.Count; i++)
-            {
-                //MessageBox.Show("time: "+itemsList.SleepDailyList[i].wokeUpTime);
-            }
+
 
             addColor();
         }
@@ -47,18 +44,11 @@ namespace DailyPlannerAppMarco.UserControls
 
             shape.FillColor = ControlPaint.Light(Items.SleepItem.color);
             shape.BorderColor = ControlPaint.Dark(Items.SleepItem.color);
-            //btnDown.FillColor = Items.CalorieItem.color;
-            //btnUp.FillColor = Items.CalorieItem.color;
+
 
             btnPrev.FillColor = Items.SleepItem.color;
 
-            //btnUp.Image.RotateFlip(RotateFlipType.RotateNoneFlipY);
 
-            //btnHistory.FillColor = Items.itemToDo.color;
-
-            //btnEdit.FillColor = Items.itemToDo.color;
-
-            //listBox.ForeColor = Items.itemToDo.color;
 
         }
 

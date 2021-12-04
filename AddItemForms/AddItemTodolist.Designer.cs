@@ -284,7 +284,7 @@ namespace DailyPlannerAppMarco.AddItemForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddItemTodolist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddItemTodolist";
+            this.Text = "Add Task";
             this.Load += new System.EventHandler(this.AddItemTodolist_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

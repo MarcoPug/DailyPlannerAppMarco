@@ -52,6 +52,7 @@ namespace DailyPlannerAppMarco.UserControls
                 !testWeight || !testFeet || !testInches || !testAge ||
                 (!rbMale.Checked && !rbFemale.Checked) ||
                 cbWorkout.SelectedIndex == -1 || cbType.SelectedIndex == -1
+                && age > 100 && inches > 11 && feet > 7 && weight > 1000
                 )
             {
                 MessageBox.Show("Invalid Information");
@@ -105,9 +106,8 @@ namespace DailyPlannerAppMarco.UserControls
                     break;
             }
 
-            //MessageBox.Show("bmr1: " + BMR);
             BMR = BMR * type;
-            //MessageBox.Show("bmr2: " + BMR);
+
             switch (cbWorkout.SelectedIndex)
             {
                 case 0:
@@ -186,7 +186,7 @@ namespace DailyPlannerAppMarco.UserControls
 
         private void addColor()
         {
-
+            
 
             label1.BackColor = ControlPaint.Light(Items.CalorieItem.color);
             label2.BackColor = ControlPaint.Light(Items.CalorieItem.color);
@@ -208,14 +208,7 @@ namespace DailyPlannerAppMarco.UserControls
 
             shape.FillColor = ControlPaint.Light(Items.CalorieItem.color);
             shape.BorderColor = ControlPaint.Dark(Items.CalorieItem.color);
-            //shape.BackColor = ControlPaint.Light(Items.CalorieItem.color);
 
-
-            //btnHistory.FillColor = Items.itemToDo.color;
-
-            //btnEdit.FillColor = Items.itemToDo.color;
-
-            //listBox.ForeColor = Items.itemToDo.color;
 
         }
     }

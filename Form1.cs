@@ -18,13 +18,13 @@ namespace DailyPlannerAppMarco
         public static bool fakeTime = false;
         public static DateTime current;
         public static DateTime curFakeTime = DateTime.Now;
-        DateTime enterFormDate = new DateTime(); //new DateTime(2019, 6, 20, 23, 58, 29);
-        //DateTime leaveFormDate = new DateTime();
+        DateTime enterFormDate = new DateTime(); 
+
 
         public static bool loggedIn = false;
         public static string dbName = "UserAccounts";
         public static Guid currId;
-        //public static Guid noAcc = new Guid("0");
+
 
         MongoCRUD database = new MongoCRUD(dbName);
 
@@ -38,8 +38,7 @@ namespace DailyPlannerAppMarco
 
             if (loggedIn)
             {
-                //addSleepItem formadd2 = new addSleepItem(); //make once per day
-                //formadd2.ShowDialog();
+
 
                 UC_Home uc = new UC_Home();
                 AddUserControl(uc);
@@ -56,11 +55,9 @@ namespace DailyPlannerAppMarco
                 var currRecord = db.LoadRecordById<User>(dbName, currId);
                 if (currRecord.appInfo.leftBefore)
                 {
-                    //DateTime temp = theCurrentDT();
-                    //temp = temp.AddDays(0);
-                    //currRecord.appInfo.UserleaveFormDate = temp;
+
                     db.UpsertRecord(dbName, currId, currRecord);
-                    //MessageBox.Show("left before,\ncurrent dt: " + theCurrentDT() + "\nUserLeaveDate: " + currRecord.appInfo.UserleaveFormDate);
+                   
 
                 }
 
@@ -99,7 +96,6 @@ namespace DailyPlannerAppMarco
 
         private void AddUserControl(UserControl userControl)
         {
-            //checkNewDay();
             
             if (!usingAdminTools)
             {
@@ -122,15 +118,7 @@ namespace DailyPlannerAppMarco
                 System.TimeSpan diff = DateTime.Now.Subtract(itemsList.toDoItems[i].dueDate);
                 System.TimeSpan diff2 = current.Subtract(itemsList.toDoItems[i].dueDate);
 
-                //TimeSpan span = itemsList.toDoItems[i].dueDate - DateTime.Now;
-                //MessageBox.Show(span.ToString());
-                //MessageBox.Show(diff.ToString() + "");
 
-
-                //MessageBox.Show("" + itemsList.toDoItems[i].getDueDate());
-                //MessageBox.Show("diff: " + diff);
-
-                //is.important
                 if ((itemsList.toDoItems[i].canShowMessage && itemsList.toDoItems[i].important) && (itemsList.toDoItems[i].hasDueDate && itemsList.toDoItems[i].isChecked == false && diff.Hours >= 0))
                 {//if item is important and has a due date and item is Not checked and missed by 0 or more hours (more than 60 minutes since fail to complete)
                     if ((diff.Hours < 6 && diff.Hours >= 1) || (diff2.Hours < 6 && diff2.Hours >= 1))//missed within 1-6 hours
@@ -141,13 +129,8 @@ namespace DailyPlannerAppMarco
                         MessageBox.Show("You Forgot to do: " + itemsList.toDoItems[i].title + " Today!");
                     itemsList.toDoItems[i].canShowMessage = false;
 
-                    //MessageBox.Show(DateTime.Now + "\n" + "MINUS" + "\n" + itemsList.toDoItems[i].dueDate + "\n" + "EQUALS:" + "\n" + diff.Hours);
-
-
-
-                    //MessageBox.Show("(diff.Hours >= 0) : " + diff.Hours);
                 }
-                //MessageBox.Show(DateTime.Now.ToString() + "<< current . list >> " + itemsList.toDoItems[i].dueDate);
+
 
             }
         }
@@ -157,7 +140,6 @@ namespace DailyPlannerAppMarco
             UC_Home uc = new UC_Home();
             AddUserControl(uc);
 
-            //btnExit.BackColor = Color.Maroon;
             btnUserAcc.FillColor = Color.FromArgb(120, 179, 84);
             panel1.BackColor = Color.FromArgb(120, 179, 84);
 
@@ -188,25 +170,22 @@ namespace DailyPlannerAppMarco
                 temp = temp.AddDays(0);
                 currRecord.appInfo.UserleaveFormDate = temp;
                 db.UpsertRecord(dbName, currId, currRecord);
-                //MessageBox.Show("left before IN NEWDAY,\ncurrent dt: " + theCurrentDT() + "\nUserLeaveDate: " + currRecord.appInfo.UserleaveFormDate);
-                //MessageBox.Show("current: " + current);
+
             }
             
 
             DateTime leaveFormDate = currRecord.appInfo.UserleaveFormDate.Date;
 
-            //MessageBox.Show("enter month: " + enterFormDate.Month + "\ncurrent month: " + current.Month + "\nthe current dt: " + theCurrentDT().Month);
-            //(((enterFormDate.Date != leaveFormDate.Month) && currRecord.appInfo.leftBefore) || (enterFormDate.Month != current.Month))
+
             if (((enterFormDate.Month != leaveFormDate.Month) && currRecord.appInfo.leftBefore) || (enterFormDate.Month != current.Month))//new month
             {
-                //MessageBox.Show("new munf");
+
                 setNewMonth();
 
             }
 
             if (((enterFormDate.Date != leaveFormDate) && currRecord.appInfo.leftBefore) || (enterFormDate.Date != current.Date))//New day opening app
             {
-                //MessageBox.Show("new day");
                 newDayCalorie();
                 newDaySleep();
                 newFitnessDay();
@@ -231,25 +210,24 @@ namespace DailyPlannerAppMarco
 
         private void setNewMonth()
         {
-            //MessageBox.Show("month: " + current.Month);
+
             int monthlyCals = 0;
 
             DateTime lastMonth = theCurrentDT();
             lastMonth = lastMonth.AddMonths(-1);
 
-            //MessageBox.Show("last month: " + lastMonth.Month);
 
             for (int i = 0; i < itemsList.calListList.Count; i++)
             {
                 for (int x = 0; x < itemsList.calListList[i].Count; x++)
                 {
 
-                    //MessageBox.Show(itemsList.calListList[i][x].itemDate.Month + " == " + lastMonth.Month + "\n" + itemsList.calListList[i][x].itemDate);
 
-                    if (itemsList.calListList[i][x].itemDate.Month == lastMonth.Month) // && itemsList.calListList[i][x].itemDate.Year == theCurrentDT().Year
+
+                    if (itemsList.calListList[i][x].itemDate.Month == lastMonth.Month)
                     {
                         monthlyCals = monthlyCals + itemsList.calListList[i][x].calories;
-                        //MessageBox.Show(monthlyCals + " + " + itemsList.calListList[i][x].calories.ToString());
+
                     }
 
 
@@ -268,22 +246,7 @@ namespace DailyPlannerAppMarco
             }
             itemsList.CalsMonthly.Add(monthCalItem);
 
-            for (int i = 0; i < itemsList.CalsMonthly.Count; i++)
-            {
-                //MessageBox.Show(itemsList.CalsMonthly[i].itemDate + " "+  itemsList.CalsMonthly[i].calories.ToString());
 
-            }
-            //
-            //if (itemsList.CaloriesDailyList.Count > 1)
-            //{
-            //    for (int i = 0; i < itemsList.CaloriesDailyList.Count; i++)
-            //    {
-            //        if (itemsList.CaloriesDailyList[i].isEmpty)
-            //        {
-            //            itemsList.CaloriesDailyList.RemoveAt(i);
-            //        }
-            //    }
-            //}
 
 
 
@@ -305,10 +268,7 @@ namespace DailyPlannerAppMarco
                 sleep.isEmpty = true;
                 //
                 itemsList.SleepDailyList.Add(sleep);
-                for (int i = 0; i < itemsList.SleepDailyList.Count; i++)
-                {
-                    //MessageBox.Show("8: " + itemsList.SleepDailyList[i].wokeUpTime);
-                }
+
             }
         }
 
@@ -326,37 +286,19 @@ namespace DailyPlannerAppMarco
             }
         }
 
-        private void newFitnessDay()//NEW
+        private void newFitnessDay()
         {
-            //List<CalorieItem> tempList = new List<CalorieItem>(itemsList.CaloriesDailyList);
-            //itemsList.calListList.Add(tempList);
-            //itemsList.CaloriesDailyList.Clear();
-            //if (itemsList.CaloriesDailyList.Count == 0)
-            //{
-            //    CalorieItem food = new CalorieItem(0, "");
-            //    food.isEmpty = true;
-            //    itemsList.CaloriesDailyList.Add(food);
-            //}
+
 
             StartWorkout.completed = false;
 
             FitnessItem item = new FitnessItem();
 
-            //if (StartWorkout.workoutTimeToday.ToString() == "00:00:00")
-            //{
-            //    item.workoutTime = StartWorkout.workoutTimeToday;
-            //}
-            //else
-            //{
 
-            //    item.workoutTime = StartWorkout.workoutTimeToday;
-
-
-            //}
             for (int i = 0; i < StartWorkout.workoutsToday.Count; i++)
             {
                 item.workoutNamesToday.Add(StartWorkout.workoutsToday[i].title);
-                //MessageBox.Show("adding: " + StartWorkout.workouts[i]);
+
             }
 
 
@@ -364,7 +306,7 @@ namespace DailyPlannerAppMarco
             DateTime dt = theCurrentDT();
             dt = dt.AddDays(-1);
             item.itemDate = dt;
-            //MessageBox.Show("item date: "+ item.itemDate + "item.workoutTime: "+item.workoutTime);
+
             itemsList.FitnessWorkoutTimes.Add(item);
             StartWorkout.workoutTimeToday = TimeSpan.Zero;
         }
@@ -373,37 +315,31 @@ namespace DailyPlannerAppMarco
         {
             for (int i = 0; i < itemsList.toDoItems.Count; ++i)
             {
-                //MessageBox.Show("item can show message: "+ itemsList.toDoItems[i].canShowMessage);
 
-                if (itemsList.toDoItems[i].canShowMessage == false) //it keeps entering too much
+
+                if (itemsList.toDoItems[i].canShowMessage == false) 
                 {
 
                     itemsList.toDoItems[i].canShowMessage = true;
-                    // MessageBox.Show("Now it can! right?::: " + itemsList.toDoItems[i].canShowMessage);
+
                 }
 
 
                 if (itemsList.toDoItems[i].isChecked)
                 {
-                    //MessageBox.Show("is same day 2: "+isSameDay2);
-                    //MessageBox.Show("removing items cuz its a new day!");
+
 
                     if (itemsList.toDoItems[i].repetitive == false)
                     {
-                        //if (fakeTime == true)
-                        //    itemsList.toDoItems[i].dateRecycled = current;
-                        //else
-                        //    itemsList.toDoItems[i].dateRecycled = DateTime.Now;
-                        itemsList.toDoItems[i].dateRecycled = theCurrentDT();
-                        //MessageBox.Show(itemsList.toDoItems[i].title + " is getting destroyed");
 
-                        //itemsList.toDoItems.RemoveAll(s => s.repetitive == false);
+                        itemsList.toDoItems[i].dateRecycled = theCurrentDT();
+
 
 
                         itemsList.toDoItems[i].isRecycled = true;
                         itemsList.toDoItemsDeleted.Add(itemsList.toDoItems[i]);
                         itemsList.toDoItems.Remove(itemsList.toDoItems[i]);
-                        //itemsList.toDoItems.RemoveAt(i);
+
                     }
 
 
@@ -414,7 +350,7 @@ namespace DailyPlannerAppMarco
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            //btnExit.BackColor = Items.itemToDo.color;
+
             btnUserAcc.FillColor = Items.itemToDo.color;
             panel1.BackColor = Items.itemToDo.color;
 
@@ -432,7 +368,7 @@ namespace DailyPlannerAppMarco
             UC_Fitness uc = new UC_Fitness();
             AddUserControl(uc);
 
-            //btnExit.BackColor = Items.FitnessItem.color;
+
             btnUserAcc.FillColor = Items.FitnessItem.color;
             panel1.BackColor = Items.FitnessItem.color;
 
@@ -457,7 +393,7 @@ namespace DailyPlannerAppMarco
             {
                 timer.Start();
 
-                checkIfAdmin(); ///////////////
+                checkIfAdmin();
 
                 MongoCRUD db = database;
                 var currRecord = db.LoadRecordById<User>(dbName, currId);
@@ -484,7 +420,7 @@ namespace DailyPlannerAppMarco
                 var currRecord = db.LoadRecordById<User>(dbName, currId);
                 if (currRecord.appInfo.Admin)
                 {
-                    //MessageBox.Show("admin");
+
                     btnAdminPanel.Visible = true;
                     button1.Visible = true;
                     button4.Visible = true;
@@ -493,7 +429,7 @@ namespace DailyPlannerAppMarco
                 }
                 else
                 {
-                    //MessageBox.Show("not admin");
+
                     btnAdminPanel.Visible = false;
                     button1.Visible = false;
                     button4.Visible = false;
@@ -520,7 +456,6 @@ namespace DailyPlannerAppMarco
             timer.Stop();
             fakeTime = true;
 
-            //MessageBox.Show(timeUnit + " <---: time unit");
 
             switch (timeUnit)
             {
@@ -584,19 +519,7 @@ namespace DailyPlannerAppMarco
 
             db.UpsertRecord(dbName, currId, currRecord);
 
-            //for (int i = 0; i < itemsList.CaloriesDailyList.Count; i++)
-            //{
-            //    MessageBox.Show("itemlist : " + i + " : " + itemsList.CaloriesDailyList[i].title + " : " + itemsList.CaloriesDailyList[i].calories);
-            //}
-            //for (int i = 0; i < currRecord.listInfo.userCaloriesDailyList.Count; i++)
-            //{
-            //    MessageBox.Show("curr record : " + i + " : " + currRecord.listInfo.userCaloriesDailyList[i].title + " : " + itemsList.CaloriesDailyList[i].calories);
-            //}
 
-            for (int i = 0; i < itemsList.SleepDailyList.Count; i++)
-            {
-                //MessageBox.Show(itemsList.SleepDailyList[i].wokeUpTime);
-            }
 
         }
 
@@ -612,7 +535,7 @@ namespace DailyPlannerAppMarco
             if (currRecord.appInfo.leftBefore)
             {
                 currRecord = db.LoadRecordById<User>(dbName, currId);
-                //List<itemToDo> temp1 = new List<itemToDo>();
+
                 MessageBox.Show("Welcome back " + currRecord.Email);
 
                 itemsList.toDoItems = currRecord.listInfo.userToDoItems;
@@ -622,7 +545,6 @@ namespace DailyPlannerAppMarco
                 itemsList.FitnessItemsDeleted = currRecord.listInfo.userFitnessItemsDeleted;
                 itemsList.FitnessWorkoutTimes = currRecord.listInfo.FitnessWorkoutTimes;
 
-                //MessageBox.Show("calorie items count: " + currRecord.listInfo.userCaloriesDailyList.Count);
 
                 itemsList.calListList = currRecord.listInfo.usercalListList;
                 itemsList.CaloriesDailyList = currRecord.listInfo.userCaloriesDailyList;
@@ -635,19 +557,8 @@ namespace DailyPlannerAppMarco
             }
 
 
-            for (int i = 0; i < itemsList.SleepDailyList.Count; i++)
-            {
-                //MessageBox.Show("copied over successfully?: " + itemsList.SleepDailyList[i].wokeUpTime);
-            }
 
-            //for (int i = 0; i < itemsList.CaloriesDailyList.Count; i++)
-            //{
-            //    MessageBox.Show("itemlist : " + i + " : " + itemsList.CaloriesDailyList[i].title + " : " + itemsList.CaloriesDailyList[i].calories);
-            //}
-            //for (int i = 0; i < currRecord.listInfo.userCaloriesDailyList.Count; i++)
-            //{
-            //    MessageBox.Show("curr record : " + i + " : " + currRecord.listInfo.userCaloriesDailyList[i].title + " : " + itemsList.CaloriesDailyList[i].calories);
-            //}
+
         }
 
 
@@ -658,7 +569,7 @@ namespace DailyPlannerAppMarco
             UC_Calories uc = new UC_Calories();
             AddUserControl(uc);
 
-            //btnExit.BackColor = Items.CalorieItem.color;
+
             btnUserAcc.FillColor = Items.CalorieItem.color;
             panel1.BackColor = Items.CalorieItem.color;
 
@@ -670,7 +581,7 @@ namespace DailyPlannerAppMarco
             UC_Sleep uc = new UC_Sleep();
             AddUserControl(uc);
 
-            //btnExit.BackColor = Items.SleepItem.color;
+
             btnUserAcc.FillColor = Items.SleepItem.color;
             panel1.BackColor = Items.SleepItem.color;
         }
@@ -730,7 +641,6 @@ namespace DailyPlannerAppMarco
 
 
 
-                //MessageBox.Show("to string :3 :" + currRecord.appInfo.UserleaveFormDateString);
 
                 DateTime myDate = DateTime.Parse(currRecord.appInfo.UserleaveFormDateString);
 
@@ -738,7 +648,7 @@ namespace DailyPlannerAppMarco
                 db.UpsertRecord(dbName, currId, currRecord);
 
                 fillUserArrayDB();
-                //MessageBox.Show("current dt: " + theCurrentDT() + "\nUserLeaveDate: " + currRecord.appInfo.UserleaveFormDate);
+
             }
             this.Close();
         }
@@ -752,13 +662,13 @@ namespace DailyPlannerAppMarco
         private void btnUserAcc_Click(object sender, EventArgs e)
         {
 
-            //checkNewDay();
-            //UC_Account uc = new UC_Account();
-            //AddUserControl(uc);
+            checkNewDay();
+            UC_UserAcc uc = new UC_UserAcc();
+            AddUserControl(uc);
 
-            //btnExit.BackColor = Color.Maroon;
-            //btnUserAcc.FillColor = Color.FromArgb(120, 179, 84);
-            //panel1.BackColor = Color.FromArgb(120, 179, 84);
+
+            btnUserAcc.FillColor = Color.FromArgb(120, 179, 84);
+            panel1.BackColor = Color.FromArgb(120, 179, 84);
         }
     }
 }

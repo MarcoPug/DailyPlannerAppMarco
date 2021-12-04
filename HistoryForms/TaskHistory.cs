@@ -46,9 +46,6 @@ namespace DailyPlannerAppMarco.HistoryForms
             btnRestore.FillColor = Items.itemToDo.color;
             btnRestore.BorderColor = ControlPaint.Dark(Items.itemToDo.color);
 
-            //shape.FillColor = ControlPaint.Light(Items.itemToDo.color);
-            //shape.BorderColor = ControlPaint.Dark(Items.itemToDo.color);
-
             this.BackColor = ControlPaint.Light(Items.itemToDo.color);
 
             shape2.BackColor = ControlPaint.Light(Items.itemToDo.color);

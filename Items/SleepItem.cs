@@ -19,7 +19,7 @@ namespace DailyPlannerAppMarco.Items
 
         public SleepItem()
         {
-            //this.wokeUpStr = wokeUp.ToShortTimeString();
+
 
             
 

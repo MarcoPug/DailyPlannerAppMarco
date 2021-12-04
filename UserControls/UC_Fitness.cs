@@ -15,7 +15,7 @@ namespace DailyPlannerAppMarco.UserControls
 {
     public partial class UC_Fitness : UserControl 
     {
-        //readonly MongoCRUD db;
+
         public List<CalorieItem> FitnessDailyList = new List<CalorieItem>();
 
         BindingSource bs = new BindingSource();
@@ -28,27 +28,7 @@ namespace DailyPlannerAppMarco.UserControls
 
             setData();
 
-            //db = new MongoCRUD(Form1.dbName);
 
-
-
-            //bs.DataSource = myObjList;
-            //listWorkouts.DataSource = myObjList;
-            //MessageBox.Show(Form1.current.DayOfWeek.ToString());
-            //BindingList<FitnessItem> filtered = new BindingList<FitnessItem>(myObjList.Where(obj => obj.dayofweek == Form1.current.DayOfWeek.ToString()).ToList());
-            //listWorkouts.DataSource = filtered;
-
-            /*
-            if (FitnessItem.addWorkouts == true)
-            {
-                MessageBox.Show("yo");
-                FitnessItem item = new FitnessItem();
-                item.group = "Relax Day";
-                item.dayofweek = "Sunday";
-                item.title = "";
-                itemsList.FitnessItems.Add(item);
-                FitnessItem.addWorkouts = false;
-            }*/
             addColor();
             addFilter();
             setWeekdayText();
@@ -78,14 +58,14 @@ namespace DailyPlannerAppMarco.UserControls
                 myObjList.Add(item);
 
             bs2.DataSource = myObjList;
-            //workoutDaysList.DataSource = myObjList;
+
             BindingList<FitnessItem> filtered = new BindingList<FitnessItem>(myObjList.Where(obj => obj.isRecycled == false).ToList());
-            //workoutDaysList.DataSource = filtered;
+
 
             bs.DataSource = itemsList.FitnessItems;
-            //workoutDaysList.DataSource = bs;
+
             listWorkouts.DataSource = bs;
-            //workoutDaysList.DisplayMember = "title";
+
             listWorkouts.DisplayMember = "title";
         }
         private void addColor()
@@ -111,7 +91,7 @@ namespace DailyPlannerAppMarco.UserControls
             btnAddDay.BorderColor = ControlPaint.Dark(Items.FitnessItem.color);
             btnStart.BorderColor = ControlPaint.Dark(Items.FitnessItem.color);
 
-            //listBox.ForeColor = Items.itemToDo.color;
+
             cbFilter.BorderColor = ControlPaint.Light(Items.FitnessItem.color);
 
             shapeWeekday.FillColor = ControlPaint.Light(Items.FitnessItem.color);
@@ -125,8 +105,7 @@ namespace DailyPlannerAppMarco.UserControls
 
         private void UC_Fitness_Load(object sender, EventArgs e)
         {
-            //workoutDaysList.ClearSelected();
-            //listWorkouts.ClearSelected();
+
             dayofWeek.Text = "";
             addFilter();
 
@@ -166,7 +145,7 @@ namespace DailyPlannerAppMarco.UserControls
 
         private void UC_Fitness_Click(object sender, EventArgs e)
         {
-            //workoutDaysList.ClearSelected();
+
             listWorkouts.ClearSelected();
         }
 
@@ -224,13 +203,13 @@ namespace DailyPlannerAppMarco.UserControls
             formadd.ShowDialog();
             bs.ResetBindings(false);
 
-            //workoutDaysList.ClearSelected();
+
             listWorkouts.ClearSelected();
             myObjList.ResetBindings();
 
 
 
-            //workoutDaysList.Update();
+
             bs2.ResetBindings(false);
 
 
@@ -270,17 +249,6 @@ namespace DailyPlannerAppMarco.UserControls
         {
             if (!(listWorkouts.SelectedIndex == -1))
             {
-                /*
-                //MessageBox.Show(itemsList.FitnessItems[listWorkouts.SelectedIndex].ToString());
-                MessageBox.Show(
-                "title: " +
-                itemsList.FitnessItems[listWorkouts.SelectedIndex].title + "\n\n" +
-                "day of week: " +
-                itemsList.FitnessItems[listWorkouts.SelectedIndex].dayofweek + "\n" +
-                "workout day: " +
-                itemsList.FitnessItems[listWorkouts.SelectedIndex].group + "\n");
-                //weekdayNames
-                */
 
                 MessageBox.Show(itemsList.FitnessItems[listWorkouts.SelectedIndex].ToString());
             }
@@ -292,15 +260,7 @@ namespace DailyPlannerAppMarco.UserControls
             historyform.ShowDialog();
             bs.ResetBindings(false);
             listWorkouts.ClearSelected();
-            /*
-            for (int i = 0; i < itemsList.FitnessItems.Count; i++)
-            {
-                if (itemsList.FitnessItems[i].isChecked)
-                {
-                    listWorkouts.SetItemChecked(i, true);
-                }
-            }
-            */
+
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
@@ -311,14 +271,8 @@ namespace DailyPlannerAppMarco.UserControls
 
             bs.ResetBindings(false);
 
-            //listBox.ClearSelected();
 
-            //MessageBox.Show("itemsList.FitnessWorkoutTimes.Count " + itemsList.FitnessWorkoutTimes.Count);
-            for (int i = 0; i < itemsList.FitnessWorkoutTimes.Count; i++)
-            {
-                //MessageBox.Show("workout time of " + i + " : " + itemsList.FitnessWorkoutTimes[i].workoutTime + "  ...   " + itemsList.FitnessWorkoutTimes[i].itemDate.ToShortDateString());
-            }
-            ////
+
         }
 
         private bool istodayDeleted()
@@ -386,7 +340,7 @@ namespace DailyPlannerAppMarco.UserControls
             AddFitnessItem formadd = new AddFitnessItem(true);
             formadd.ShowDialog();
             bs.ResetBindings(false);
-            //workoutDaysList.ClearSelected();
+
             listWorkouts.ClearSelected();
 
             setWeekdayText();
@@ -420,23 +374,6 @@ namespace DailyPlannerAppMarco.UserControls
 
             
 
-            //string group = (string)cbFilter.SelectedItem;
-            //if (cbFilter.SelectedIndex == -1) //if no group is selected and pressed filter
-            //{
-            //    dayofWeek.Text = "";
-            //}
-            //else //if a group is selected and pressed filter
-            //{
-
-
-            //    BindingList<FitnessItem> filtered = new BindingList<FitnessItem>(myObjList.Where(objj => objj.group == group).ToList());
-            //    bs2.DataSource = myObjList;
-            //    //workoutDaysList.DataSource = myObjList;
-            //    //workoutDaysList.DataSource = filtered;
-            //    //workoutDaysList.Update();
-
-            //    dayofWeek.Text = "on " + filtered[0].dayofweek;
-            //}
         }
 
         private void btnCancelFilter_Click(object sender, EventArgs e)
@@ -444,12 +381,12 @@ namespace DailyPlannerAppMarco.UserControls
             setData();
         }
 
-        //static bool boolAskToAdd = true;
+
         private void workoutDayCheck()
         {
 
 
-            //var currRecord = db.LoadRecordById<User>(Form1.dbName, Form1.currId);
+
             if (lblSunName.Text == "" && lblMonName.Text == "" && lblTuesName.Text == "" &&
                 lblWedName.Text == "" && lblThurName.Text == "" && lblFriName.Text == "" && lblSatName.Text == "")
             {
@@ -459,7 +396,7 @@ namespace DailyPlannerAppMarco.UserControls
                     AddFitnessItem formadd = new AddFitnessItem(true);
                     formadd.ShowDialog();
                     bs.ResetBindings(false);
-                    //workoutDaysList.ClearSelected();
+
                     listWorkouts.ClearSelected();
 
                     setWeekdayText();
@@ -470,14 +407,14 @@ namespace DailyPlannerAppMarco.UserControls
                 }
 
             }
-            //boolAskToAdd = false;
+
 
 
         }
 
         private void delWorkoutDay(Label label, int index)
         {
-            //MessageBox.Show("this label text:" + label.Text);
+
             if (label.Text != "")
             {
                 DialogResult dialogResult = MessageBox.Show("Delete this workout day?", "Delete", MessageBoxButtons.YesNo);
