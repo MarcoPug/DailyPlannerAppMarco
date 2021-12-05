@@ -49,6 +49,7 @@ namespace DailyPlannerAppMarco
             this.panelContainer = new System.Windows.Forms.Panel();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.dragControl1 = new DailyPlannerAppMarco.DragControl();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,6 +58,7 @@ namespace DailyPlannerAppMarco
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(179)))), ((int)(((byte)(84)))));
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnAdminPanel);
             this.panel1.Controls.Add(this.button1);
@@ -83,7 +85,7 @@ namespace DailyPlannerAppMarco
             // 
             // btnAdminPanel
             // 
-            this.btnAdminPanel.Location = new System.Drawing.Point(677, 5);
+            this.btnAdminPanel.Location = new System.Drawing.Point(596, 7);
             this.btnAdminPanel.Name = "btnAdminPanel";
             this.btnAdminPanel.Size = new System.Drawing.Size(81, 29);
             this.btnAdminPanel.TabIndex = 8;
@@ -347,6 +349,30 @@ namespace DailyPlannerAppMarco
             // 
             this.dragControl1.SelectControl = this.panel1;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Animated = true;
+            this.btnLogout.AutoRoundedCorners = true;
+            this.btnLogout.BorderRadius = 12;
+            this.btnLogout.CheckedState.Parent = this.btnLogout;
+            this.btnLogout.CustomImages.Parent = this.btnLogout;
+            this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogout.DisabledState.Parent = this.btnLogout;
+            this.btnLogout.FillColor = System.Drawing.Color.Maroon;
+            this.btnLogout.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.HoverState.Parent = this.btnLogout;
+            this.btnLogout.Location = new System.Drawing.Point(683, 8);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.ShadowDecoration.Parent = this.btnLogout;
+            this.btnLogout.Size = new System.Drawing.Size(75, 26);
+            this.btnLogout.TabIndex = 14;
+            this.btnLogout.Text = "LogOut";
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +416,7 @@ namespace DailyPlannerAppMarco
         private Guna.UI2.WinForms.Guna2Button btnUserAcc;
         private DragControl dragControl1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btnLogout;
     }
 }
 

@@ -237,11 +237,13 @@ namespace DailyPlannerAppMarco.AddItemForms
             {
                 txtDays.Visible = true;
                 label5.Visible = true;
+                label8.Visible = true;
             }
             else
             {
                 txtDays.Visible = false;
                 label5.Visible = false;
+                label8.Visible = false;
             }
         }
 

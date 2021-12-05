@@ -37,9 +37,11 @@ namespace DailyPlannerAppMarco.UserControls
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
             this.txtShowEmail = new System.Windows.Forms.TextBox();
             this.txtShowPassword = new System.Windows.Forms.TextBox();
             this.cbPass = new System.Windows.Forms.CheckBox();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,6 +126,7 @@ namespace DailyPlannerAppMarco.UserControls
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblError);
             this.panel2.Controls.Add(this.lblPassword);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.lblEmail);
@@ -133,6 +136,18 @@ namespace DailyPlannerAppMarco.UserControls
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(731, 141);
             this.panel2.TabIndex = 16;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblError.Location = new System.Drawing.Point(530, 93);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(174, 25);
+            this.lblError.TabIndex = 19;
+            this.lblError.Text = "<error message>";
+            this.lblError.Visible = false;
             // 
             // txtShowEmail
             // 
@@ -165,10 +180,35 @@ namespace DailyPlannerAppMarco.UserControls
             this.cbPass.UseVisualStyleBackColor = true;
             this.cbPass.CheckedChanged += new System.EventHandler(this.cbPass_CheckedChanged);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Animated = true;
+            this.btnDelete.AutoRoundedCorners = true;
+            this.btnDelete.BorderRadius = 11;
+            this.btnDelete.CheckedState.Parent = this.btnDelete;
+            this.btnDelete.CustomImages.Parent = this.btnDelete;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.DisabledState.Parent = this.btnDelete;
+            this.btnDelete.FillColor = System.Drawing.Color.Maroon;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.HoverState.Parent = this.btnDelete;
+            this.btnDelete.Location = new System.Drawing.Point(603, 15);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
+            this.btnDelete.Size = new System.Drawing.Size(184, 25);
+            this.btnDelete.TabIndex = 20;
+            this.btnDelete.Text = "Delete Account";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // UC_UserAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.cbPass);
             this.Controls.Add(this.txtShowPassword);
             this.Controls.Add(this.txtShowEmail);
@@ -197,5 +237,7 @@ namespace DailyPlannerAppMarco.UserControls
         private System.Windows.Forms.TextBox txtShowEmail;
         private System.Windows.Forms.TextBox txtShowPassword;
         private System.Windows.Forms.CheckBox cbPass;
+        private System.Windows.Forms.Label lblError;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
     }
 }

@@ -71,7 +71,7 @@ namespace DailyPlannerAppMarco
         {
 
             
-            if (isUniqueAccount(db) && txtEmail.Text != "" && txtPassword.Text != "" && txtEmail.Text.Contains("@") && txtPassword.TextLength > 3)
+            if (isUniqueAccount(db) && txtEmail.Text != "" && txtPassword.Text != "" && txtEmail.Text.Contains("@") && txtEmail.Text.Contains(".") && txtPassword.TextLength > 3)
             {
                 User user = new User
                 {
@@ -99,7 +99,31 @@ namespace DailyPlannerAppMarco
             }
             else
             {
-                lblError.Text = "Incorrent Account information";
+                string error = "";
+                if (!txtEmail.Text.Contains("@") || !txtEmail.Text.Contains("."))
+                {
+                    error = "email";
+
+                }
+                if (txtPassword.TextLength <= 3)
+                {
+                    error = error + "password";
+                }
+
+
+                if (error == "email")
+                {
+                    lblError.Text = "Enter a valid email address";
+                }
+                else if (error == "password")
+                {
+                    lblError.Text = "Your password is too short";
+                }
+                else
+                {
+                    lblError.Text = "Incorrect Account information";
+                }
+
             }
         }
 
@@ -216,6 +240,26 @@ namespace DailyPlannerAppMarco
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
         }
     }
 }

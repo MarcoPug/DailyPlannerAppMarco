@@ -670,5 +670,13 @@ namespace DailyPlannerAppMarco
             btnUserAcc.FillColor = Color.FromArgb(120, 179, 84);
             panel1.BackColor = Color.FromArgb(120, 179, 84);
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+            Environment.Exit(0);
+
+
+        }
     }
 }
