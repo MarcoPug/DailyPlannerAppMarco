@@ -31,6 +31,7 @@ namespace DailyPlannerAppMarco
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAdminPanel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@ namespace DailyPlannerAppMarco
             this.panelContainer = new System.Windows.Forms.Panel();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.dragControl1 = new DailyPlannerAppMarco.DragControl();
-            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -73,6 +73,30 @@ namespace DailyPlannerAppMarco
             this.panel1.Size = new System.Drawing.Size(800, 52);
             this.panel1.TabIndex = 0;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Animated = true;
+            this.btnLogout.AutoRoundedCorners = true;
+            this.btnLogout.BorderRadius = 12;
+            this.btnLogout.CheckedState.Parent = this.btnLogout;
+            this.btnLogout.CustomImages.Parent = this.btnLogout;
+            this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogout.DisabledState.Parent = this.btnLogout;
+            this.btnLogout.FillColor = System.Drawing.Color.Maroon;
+            this.btnLogout.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.HoverState.Parent = this.btnLogout;
+            this.btnLogout.Location = new System.Drawing.Point(683, 8);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.ShadowDecoration.Parent = this.btnLogout;
+            this.btnLogout.Size = new System.Drawing.Size(75, 26);
+            this.btnLogout.TabIndex = 14;
+            this.btnLogout.Text = "LogOut";
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DailyPlannerAppMarco.Properties.Resources.frogBlankIcon;
@@ -85,9 +109,9 @@ namespace DailyPlannerAppMarco
             // 
             // btnAdminPanel
             // 
-            this.btnAdminPanel.Location = new System.Drawing.Point(596, 7);
+            this.btnAdminPanel.Location = new System.Drawing.Point(152, 6);
             this.btnAdminPanel.Name = "btnAdminPanel";
-            this.btnAdminPanel.Size = new System.Drawing.Size(81, 29);
+            this.btnAdminPanel.Size = new System.Drawing.Size(42, 40);
             this.btnAdminPanel.TabIndex = 8;
             this.btnAdminPanel.Text = "Database";
             this.btnAdminPanel.UseVisualStyleBackColor = true;
@@ -95,9 +119,9 @@ namespace DailyPlannerAppMarco
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(77, 12);
+            this.button1.Location = new System.Drawing.Point(67, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 34);
+            this.button1.Size = new System.Drawing.Size(38, 34);
             this.button1.TabIndex = 3;
             this.button1.Text = "add Hour";
             this.button1.UseVisualStyleBackColor = true;
@@ -116,9 +140,9 @@ namespace DailyPlannerAppMarco
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(131, 12);
+            this.button4.Location = new System.Drawing.Point(108, 9);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(48, 34);
+            this.button4.Size = new System.Drawing.Size(38, 34);
             this.button4.TabIndex = 6;
             this.button4.Text = "add Day";
             this.button4.UseVisualStyleBackColor = true;
@@ -348,30 +372,6 @@ namespace DailyPlannerAppMarco
             // dragControl1
             // 
             this.dragControl1.SelectControl = this.panel1;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Animated = true;
-            this.btnLogout.AutoRoundedCorners = true;
-            this.btnLogout.BorderRadius = 12;
-            this.btnLogout.CheckedState.Parent = this.btnLogout;
-            this.btnLogout.CustomImages.Parent = this.btnLogout;
-            this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogout.DisabledState.Parent = this.btnLogout;
-            this.btnLogout.FillColor = System.Drawing.Color.Maroon;
-            this.btnLogout.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.HoverState.Parent = this.btnLogout;
-            this.btnLogout.Location = new System.Drawing.Point(683, 8);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.ShadowDecoration.Parent = this.btnLogout;
-            this.btnLogout.Size = new System.Drawing.Size(75, 26);
-            this.btnLogout.TabIndex = 14;
-            this.btnLogout.Text = "LogOut";
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Form1
             // 

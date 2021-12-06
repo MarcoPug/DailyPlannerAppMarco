@@ -164,10 +164,10 @@ namespace DailyPlannerAppMarco.UserControls
             this.cbFilter.HoverState.Parent = this.cbFilter;
             this.cbFilter.ItemHeight = 30;
             this.cbFilter.ItemsAppearance.Parent = this.cbFilter;
-            this.cbFilter.Location = new System.Drawing.Point(622, 275);
+            this.cbFilter.Location = new System.Drawing.Point(561, 275);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.ShadowDecoration.Parent = this.cbFilter;
-            this.cbFilter.Size = new System.Drawing.Size(133, 36);
+            this.cbFilter.Size = new System.Drawing.Size(194, 36);
             this.cbFilter.TabIndex = 39;
             this.toolTip1.SetToolTip(this.cbFilter, "Filter");
             this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
@@ -590,7 +590,7 @@ namespace DailyPlannerAppMarco.UserControls
             this.btnCancelFilter.ForeColor = System.Drawing.Color.White;
             this.btnCancelFilter.HoverState.Parent = this.btnCancelFilter;
             this.btnCancelFilter.Image = global::DailyPlannerAppMarco.Properties.Resources.exitIconSmall;
-            this.btnCancelFilter.Location = new System.Drawing.Point(597, 283);
+            this.btnCancelFilter.Location = new System.Drawing.Point(536, 279);
             this.btnCancelFilter.Name = "btnCancelFilter";
             this.btnCancelFilter.ShadowDecoration.Parent = this.btnCancelFilter;
             this.btnCancelFilter.Size = new System.Drawing.Size(19, 19);

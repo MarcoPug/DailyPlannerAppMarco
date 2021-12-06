@@ -536,8 +536,6 @@ namespace DailyPlannerAppMarco
             {
                 currRecord = db.LoadRecordById<User>(dbName, currId);
 
-                MessageBox.Show("Welcome back " + currRecord.Email);
-
                 itemsList.toDoItems = currRecord.listInfo.userToDoItems;
                 itemsList.toDoItemsDeleted = currRecord.listInfo.usertoDoItemsDeleted;
 
@@ -607,6 +605,7 @@ namespace DailyPlannerAppMarco
         private void btnExit_Click(object sender, EventArgs e)
         {
             AppClosing();
+            this.Close();
         }
 
         private void AppClosing()
@@ -650,7 +649,7 @@ namespace DailyPlannerAppMarco
                 fillUserArrayDB();
 
             }
-            this.Close();
+            
         }
 
         private void btnAdminPanel_Click(object sender, EventArgs e)
@@ -673,6 +672,7 @@ namespace DailyPlannerAppMarco
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            AppClosing();
             Application.Restart();
             Environment.Exit(0);
 

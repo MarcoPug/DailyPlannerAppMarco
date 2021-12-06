@@ -378,7 +378,11 @@ namespace DailyPlannerAppMarco.UserControls
 
         private void btnCancelFilter_Click(object sender, EventArgs e)
         {
-            setData();
+            bs.DataSource = itemsList.FitnessItems;
+            listWorkouts.DataSource = bs;
+            dayofWeek.Text = "";
+
+            cbFilter.SelectedIndex = -1;
         }
 
 

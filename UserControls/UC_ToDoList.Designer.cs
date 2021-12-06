@@ -262,10 +262,10 @@ namespace DailyPlannerAppMarco.UserControls
             this.cGroup.HoverState.Parent = this.cGroup;
             this.cGroup.ItemHeight = 30;
             this.cGroup.ItemsAppearance.Parent = this.cGroup;
-            this.cGroup.Location = new System.Drawing.Point(613, 287);
+            this.cGroup.Location = new System.Drawing.Point(552, 287);
             this.cGroup.Name = "cGroup";
             this.cGroup.ShadowDecoration.Parent = this.cGroup;
-            this.cGroup.Size = new System.Drawing.Size(133, 36);
+            this.cGroup.Size = new System.Drawing.Size(194, 36);
             this.cGroup.TabIndex = 26;
             this.toolTip1.SetToolTip(this.cGroup, "Filter");
             this.cGroup.SelectedIndexChanged += new System.EventHandler(this.cGroup_SelectedIndexChanged);
@@ -287,7 +287,7 @@ namespace DailyPlannerAppMarco.UserControls
             this.btnCancelFilter.ForeColor = System.Drawing.Color.White;
             this.btnCancelFilter.HoverState.Parent = this.btnCancelFilter;
             this.btnCancelFilter.Image = global::DailyPlannerAppMarco.Properties.Resources.exitIconSmall;
-            this.btnCancelFilter.Location = new System.Drawing.Point(588, 295);
+            this.btnCancelFilter.Location = new System.Drawing.Point(527, 289);
             this.btnCancelFilter.Name = "btnCancelFilter";
             this.btnCancelFilter.ShadowDecoration.Parent = this.btnCancelFilter;
             this.btnCancelFilter.Size = new System.Drawing.Size(19, 19);
