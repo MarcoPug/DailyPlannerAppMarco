@@ -38,6 +38,7 @@ namespace DailyPlannerAppMarco.UserControls
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnDelete = new Guna.UI2.WinForms.Guna2CircleButton();
             this.shape = new Guna.UI2.WinForms.Guna2Shapes();
+            this.lbNotifications = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // listBox
@@ -45,7 +46,7 @@ namespace DailyPlannerAppMarco.UserControls
             this.listBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox.FormattingEnabled = true;
             this.listBox.ItemHeight = 37;
-            this.listBox.Location = new System.Drawing.Point(172, 116);
+            this.listBox.Location = new System.Drawing.Point(180, 70);
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(438, 41);
             this.listBox.TabIndex = 1;
@@ -54,7 +55,7 @@ namespace DailyPlannerAppMarco.UserControls
             // 
             this.lblWokeUp.AutoSize = true;
             this.lblWokeUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWokeUp.Location = new System.Drawing.Point(167, 72);
+            this.lblWokeUp.Location = new System.Drawing.Point(175, 26);
             this.lblWokeUp.Name = "lblWokeUp";
             this.lblWokeUp.Size = new System.Drawing.Size(128, 26);
             this.lblWokeUp.TabIndex = 4;
@@ -85,7 +86,7 @@ namespace DailyPlannerAppMarco.UserControls
             this.btnPrev.HoverState.Parent = this.btnPrev;
             this.btnPrev.Image = global::DailyPlannerAppMarco.Properties.Resources.HourglassIcon;
             this.btnPrev.ImageSize = new System.Drawing.Size(34, 34);
-            this.btnPrev.Location = new System.Drawing.Point(577, 174);
+            this.btnPrev.Location = new System.Drawing.Point(585, 128);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPrev.ShadowDecoration.Parent = this.btnPrev;
@@ -112,7 +113,7 @@ namespace DailyPlannerAppMarco.UserControls
             this.btnAdd.HoverState.Parent = this.btnAdd;
             this.btnAdd.Image = global::DailyPlannerAppMarco.Properties.Resources.plusIcon;
             this.btnAdd.ImageSize = new System.Drawing.Size(34, 34);
-            this.btnAdd.Location = new System.Drawing.Point(522, 174);
+            this.btnAdd.Location = new System.Drawing.Point(530, 128);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
@@ -139,7 +140,7 @@ namespace DailyPlannerAppMarco.UserControls
             this.btnDelete.HoverState.Parent = this.btnDelete;
             this.btnDelete.Image = global::DailyPlannerAppMarco.Properties.Resources.minusIcon;
             this.btnDelete.ImageSize = new System.Drawing.Size(34, 34);
-            this.btnDelete.Location = new System.Drawing.Point(464, 174);
+            this.btnDelete.Location = new System.Drawing.Point(472, 128);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
@@ -150,7 +151,7 @@ namespace DailyPlannerAppMarco.UserControls
             // 
             // shape
             // 
-            this.shape.Location = new System.Drawing.Point(101, 101);
+            this.shape.Location = new System.Drawing.Point(109, 55);
             this.shape.Name = "shape";
             this.shape.PolygonSkip = 1;
             this.shape.Rotate = 0F;
@@ -160,10 +161,21 @@ namespace DailyPlannerAppMarco.UserControls
             this.shape.Text = "guna2Shapes1";
             this.shape.Zoom = 80;
             // 
+            // lbNotifications
+            // 
+            this.lbNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNotifications.FormattingEnabled = true;
+            this.lbNotifications.ItemHeight = 16;
+            this.lbNotifications.Location = new System.Drawing.Point(167, 178);
+            this.lbNotifications.Name = "lbNotifications";
+            this.lbNotifications.Size = new System.Drawing.Size(468, 116);
+            this.lbNotifications.TabIndex = 44;
+            // 
             // UC_Sleep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbNotifications);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.btnPrev);
@@ -188,5 +200,6 @@ namespace DailyPlannerAppMarco.UserControls
         private System.Windows.Forms.ToolTip toolTip1;
         private Guna.UI2.WinForms.Guna2CircleButton btnDelete;
         private Guna.UI2.WinForms.Guna2Shapes shape;
+        private System.Windows.Forms.ListBox lbNotifications;
     }
 }

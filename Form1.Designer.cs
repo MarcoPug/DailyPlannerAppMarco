@@ -89,7 +89,7 @@ namespace DailyPlannerAppMarco
             this.btnLogout.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.HoverState.Parent = this.btnLogout;
-            this.btnLogout.Location = new System.Drawing.Point(683, 8);
+            this.btnLogout.Location = new System.Drawing.Point(683, 6);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.ShadowDecoration.Parent = this.btnLogout;
             this.btnLogout.Size = new System.Drawing.Size(75, 26);
@@ -333,7 +333,7 @@ namespace DailyPlannerAppMarco
             this.btnHome.Animated = true;
             this.btnHome.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnHome.Checked = true;
-            this.btnHome.CheckedState.CustomBorderColor = System.Drawing.Color.DimGray;
+            this.btnHome.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(179)))), ((int)(((byte)(84)))));
             this.btnHome.CheckedState.Parent = this.btnHome;
             this.btnHome.CustomBorderColor = System.Drawing.Color.White;
             this.btnHome.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
@@ -346,7 +346,7 @@ namespace DailyPlannerAppMarco
             this.btnHome.FillColor = System.Drawing.Color.White;
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnHome.ForeColor = System.Drawing.Color.Black;
-            this.btnHome.HoverState.CustomBorderColor = System.Drawing.Color.DimGray;
+            this.btnHome.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(179)))), ((int)(((byte)(84)))));
             this.btnHome.HoverState.Parent = this.btnHome;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Name = "btnHome";

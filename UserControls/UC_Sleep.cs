@@ -33,7 +33,7 @@ namespace DailyPlannerAppMarco.UserControls
 
             listBox.ClearSelected();
 
-
+            SetNotifications();
 
             addColor();
         }
@@ -95,6 +95,32 @@ namespace DailyPlannerAppMarco.UserControls
                 listBox.ClearSelected();
             }
 
+        }
+
+
+        private void SetNotifications()
+        {
+            for (int i = 0; i < itemsList.toDoItems.Count; i++)//check if deadline passed
+            {
+
+                if (itemsList.toDoItems[i].hasDueDate)
+                {
+
+                    TimeSpan diff = Form1.theCurrentDT() - itemsList.toDoItems[i].dueDate;
+                    double hours = diff.TotalHours;
+                    int hoursAway = 24 - (int)hours;
+                    if (hoursAway <= 7 && hoursAway > 0)
+                    {
+                        lbNotifications.Items.Add(itemsList.toDoItems[i].title + " Is in " + hoursAway + " hours!");
+                    }
+
+
+                }
+            }
+            if (lbNotifications.Items.Count == 0)
+            {
+                lbNotifications.Visible = false;
+            }
         }
     }
 }
