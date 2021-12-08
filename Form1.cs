@@ -70,7 +70,57 @@ namespace DailyPlannerAppMarco
                     itemsList.CaloriesDailyList.Add(food);
                 }
 
+                ////
+                //int count = 0;
 
+                //var recs = db.LoadRecords<User>(Form1.dbName);
+                //foreach (var rec in recs)
+                //{
+
+                //    if ("jackSmith@gmail.com" == rec.Email)
+                //    {
+                //        count++;
+                //        CalorieItem cal = new CalorieItem(1000, "Food");
+
+                //        for (int i = 15; i <= 30; i++)
+                //        {
+                //            newDayCalorie();
+                //            cal.title = "Food";
+                //            cal.calories = 1000;
+                //            cal.itemDate = new DateTime(2021, 11, i, 0, 00, 0);
+                //            itemsList.CaloriesDailyList.Add(cal);
+                            
+                //        }
+                //        setNewMonth();
+
+                //    }
+                //}
+
+                //if (count == 0)
+                //{
+
+                //    User user = new User
+                //    {
+                //        Email = "jackSmith@gmail.com",
+                //        Password = "brookdale1234",
+                //        listInfo = new userListInfo
+                //        {
+
+                //        },
+                //        appInfo = new userAppInfo
+                //        {
+                //            leftBefore = false,
+                //            Admin = true
+
+                //        },
+                //        bmrInfo = new userBMRinfo
+                //        {
+
+                //        }
+                //    };
+                //    db.InsertRecord(Form1.dbName, user);
+                //}
+                ////
             }
 
 
@@ -441,8 +491,8 @@ namespace DailyPlannerAppMarco
 
         private void button1_Click(object sender, EventArgs e)
         {
-            addTime("hour");
-
+            //addTime("hour");
+            addTime("minus");
         }
 
         public void addTime(string timeUnit)
@@ -464,6 +514,9 @@ namespace DailyPlannerAppMarco
                     break;
                 case "day":
                     current = current.AddDays(1);
+                    break;
+                case "minus":
+                    current = current.AddDays(-1);
                     break;
                 default:
                     break;
