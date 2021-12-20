@@ -53,6 +53,7 @@ namespace DailyPlannerAppMarco
         public List<FitnessItem> userFitnessItems { get; set; }
         public List<FitnessItem> userFitnessItemsDeleted { get; set; }
         public List<FitnessItem> FitnessWorkoutTimes { get; set; }
+        public string[] userWorkoutNames { get; set; }
         //
         public List<List<CalorieItem>> usercalListList { get; set; }
         public List<CalorieItem> userCaloriesDailyList { get; set; }

@@ -28,7 +28,7 @@ namespace DailyPlannerAppMarco
 
         MongoCRUD database = new MongoCRUD(dbName);
 
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -70,57 +70,6 @@ namespace DailyPlannerAppMarco
                     itemsList.CaloriesDailyList.Add(food);
                 }
 
-                ////
-                //int count = 0;
-
-                //var recs = db.LoadRecords<User>(Form1.dbName);
-                //foreach (var rec in recs)
-                //{
-
-                //    if ("jackSmith@gmail.com" == rec.Email)
-                //    {
-                //        count++;
-                //        CalorieItem cal = new CalorieItem(1000, "Food");
-
-                //        for (int i = 15; i <= 30; i++)
-                //        {
-                //            newDayCalorie();
-                //            cal.title = "Food";
-                //            cal.calories = 1000;
-                //            cal.itemDate = new DateTime(2021, 11, i, 0, 00, 0);
-                //            itemsList.CaloriesDailyList.Add(cal);
-                            
-                //        }
-                //        setNewMonth();
-
-                //    }
-                //}
-
-                //if (count == 0)
-                //{
-
-                //    User user = new User
-                //    {
-                //        Email = "jackSmith@gmail.com",
-                //        Password = "brookdale1234",
-                //        listInfo = new userListInfo
-                //        {
-
-                //        },
-                //        appInfo = new userAppInfo
-                //        {
-                //            leftBefore = false,
-                //            Admin = true
-
-                //        },
-                //        bmrInfo = new userBMRinfo
-                //        {
-
-                //        }
-                //    };
-                //    db.InsertRecord(Form1.dbName, user);
-                //}
-                ////
             }
 
 
@@ -255,6 +204,7 @@ namespace DailyPlannerAppMarco
                 addSleepItem formadd2 = new addSleepItem();
                 formadd2.ShowDialog();
             }
+
         }
 
 
@@ -471,6 +421,7 @@ namespace DailyPlannerAppMarco
                 if (currRecord.appInfo.Admin)
                 {
 
+
                     btnAdminPanel.Visible = true;
                     button1.Visible = true;
                     button4.Visible = true;
@@ -558,6 +509,8 @@ namespace DailyPlannerAppMarco
 
             currRecord.listInfo.FitnessWorkoutTimes = itemsList.FitnessWorkoutTimes;
 
+            currRecord.listInfo.userWorkoutNames = FitnessItem.workoutDayNames;
+
 
             currRecord.listInfo.usercalListList = itemsList.calListList;
 
@@ -595,7 +548,7 @@ namespace DailyPlannerAppMarco
                 itemsList.FitnessItems = currRecord.listInfo.userFitnessItems;
                 itemsList.FitnessItemsDeleted = currRecord.listInfo.userFitnessItemsDeleted;
                 itemsList.FitnessWorkoutTimes = currRecord.listInfo.FitnessWorkoutTimes;
-
+                FitnessItem.workoutDayNames = currRecord.listInfo.userWorkoutNames;
 
                 itemsList.calListList = currRecord.listInfo.usercalListList;
                 itemsList.CaloriesDailyList = currRecord.listInfo.userCaloriesDailyList;
@@ -731,5 +684,6 @@ namespace DailyPlannerAppMarco
 
 
         }
+
     }
 }

@@ -258,7 +258,7 @@ namespace DailyPlannerAppMarco
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "logInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "logInForm";
+            this.Text = "Log In";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

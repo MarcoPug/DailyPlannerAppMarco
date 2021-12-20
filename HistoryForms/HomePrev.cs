@@ -21,8 +21,9 @@ namespace DailyPlannerAppMarco.HistoryForms
 
             chosenMonth = chosenMonth.AddMonths(-1);
 
-            displayInfo();
+            
 
+            displayInfo();
             addColors();
 
 
@@ -67,7 +68,9 @@ namespace DailyPlannerAppMarco.HistoryForms
                     }
 
                 }
+
                 lblMonthCalTotal.Text = "Average cals per day: " + (monthlyCalsTotal / System.DateTime.DaysInMonth(chosenMonth.Year, chosenMonth.Month));
+
             }
         }
 
@@ -117,12 +120,15 @@ namespace DailyPlannerAppMarco.HistoryForms
         {
             chosenMonth = chosenMonth.AddMonths(1);
             displayInfo();
+
         }
 
         private void btnLeft_Click(object sender, EventArgs e)
         {
             chosenMonth = chosenMonth.AddMonths(-1);
             displayInfo();
+
+
         }
     }
 }

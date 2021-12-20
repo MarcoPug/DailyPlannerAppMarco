@@ -134,7 +134,11 @@ namespace DailyPlannerAppMarco.UserControls
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+
+
             t.Stop();
+
+
         }
 
         private void StartWorkout_FormClosing(object sender, FormClosingEventArgs e)
@@ -218,6 +222,9 @@ namespace DailyPlannerAppMarco.UserControls
             }
             else
             {
+
+
+
                 var sb = new System.Text.StringBuilder();
                 sb.AppendLine("You finished todays workout with,\n ");
 
@@ -227,10 +234,14 @@ namespace DailyPlannerAppMarco.UserControls
                 {
                     sb.AppendLine(workoutsToday[i].title + " : " + workoutTimes[i] + "\n");
                     times = times.Add(TimeSpan.Parse(workoutTimes[i]));
+
+
                 }
                 MessageBox.Show(sb.ToString() + "\nWith a total time of " + times.ToString());
 
                 workoutTimeToday = times;
+
+
 
                 completed = true;
                 this.Close();

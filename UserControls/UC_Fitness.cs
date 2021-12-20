@@ -32,6 +32,7 @@ namespace DailyPlannerAppMarco.UserControls
             addColor();
             addFilter();
             setWeekdayText();
+
         }
 
 
@@ -160,6 +161,13 @@ namespace DailyPlannerAppMarco.UserControls
         }
         private void setWeekdayText()
         {
+            //if (FitnessItem.workoutDayNames == null)
+            //{
+            //    for (int i = 1; i < 7; i++)
+            //    {
+            //        FitnessItem.workoutDayNames[i] = "Empty";
+            //    }
+            //}
             for (int i = 0; i < FitnessItem.workoutDayNames.Length; i++)
             {
                 if (FitnessItem.workoutDayNames[i] != null && FitnessItem.workoutDayNames[i] != "Empty")

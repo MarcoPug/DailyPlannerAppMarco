@@ -31,7 +31,7 @@ namespace DailyPlannerAppMarco.UserControls
             addColor();
 
 
-            
+            SetNotifications();
 
         }
 
@@ -43,7 +43,7 @@ namespace DailyPlannerAppMarco.UserControls
 
             cGroup.SelectedIndex = -1;
 
-            SetNotifications();
+            //SetNotifications();
         }
 
         private void SetNotifications()
